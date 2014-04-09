@@ -1,0 +1,9 @@
+[
+	{
+		"type": "functional",
+		"title": "Résultat de recherche",
+		"template": "Rbs_Demo_Nosidebarpage",
+		"content": {"mainContent":{"id":"mainContent","grid":12,"type":"container","items":[{"type":"block","name":"Rbs_Elasticsearch_Result","id":3,"label":"Rbs_Elasticsearch_Result","parameters":{"fulltextIndex":"replace:fullTextId","TTL":0}}]}},
+		"function": "Rbs_Elasticsearch_Result"
+	}
+]

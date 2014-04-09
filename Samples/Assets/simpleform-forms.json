@@ -1,0 +1,202 @@
+[
+	{
+		"label":"Formulaire contenant tous les champs",
+		"confirmationMessage":"Youpi !",
+		"fields":
+		[
+			{
+				"label":"Champ caché",
+				"fieldTypeCode":"Rbs_Simpleform_Hidden"
+			},
+			{
+				"label":"Texte court",
+				"fieldTypeCode":"Rbs_Simpleform_Text_Input",
+				"parameters":{
+					"autoComplete":true,
+					"autoCorrect":true,
+					"autoCapitalize":"sentences"
+				}
+			},
+			{
+				"label":"Texte long",
+				"fieldTypeCode":"Rbs_Simpleform_Text_Area",
+				"parameters":{
+					"lineCount":5,
+					"autoCorrect":true,
+					"autoCapitalize":"sentences"
+				}
+			},
+			{
+				"label":"Adresse e-mail",
+				"fieldTypeCode":"Rbs_Simpleform_Text_Email",
+				"parameters":{
+					"acknowledgmentReceiver":false
+				}
+			},
+			{
+				"label":"Adresses e-mail",
+				"fieldTypeCode":"Rbs_Simpleform_Text_Emails",
+				"helpText":"Séparez les différentes adresses par des virgules."
+			},
+			{
+				"label":"URL",
+				"fieldTypeCode":"Rbs_Simpleform_Text_Url"
+			},
+			{
+				"label":"Nombre entier",
+				"fieldTypeCode":"Rbs_Simpleform_Text_Integer"
+			},
+			{
+				"label":"Nombre décimal",
+				"fieldTypeCode":"Rbs_Simpleform_Text_Float"
+			},
+			{
+				"label":"Booléen (radio)",
+				"fieldTypeCode":"Rbs_Simpleform_Boolean_Radio"
+			},
+			{
+				"label":"Booléen (case à cocher)",
+				"fieldTypeCode":"Rbs_Simpleform_Boolean_Checkbox"
+			},
+			{
+				"label":"Liste déroulante",
+				"fieldTypeCode":"Rbs_Simpleform_Collection_Select",
+				"parameters":{
+					"collectionCode":"Rbs_Geo_Collection_Countries"
+				}
+			},
+			{
+				"label":"Liste à choix multiples",
+				"fieldTypeCode":"Rbs_Simpleform_Collection_SelectMultiple",
+				"parameters":{
+					"collectionCode":"Rbs_Seo_Collection_SitemapChangeFrequency",
+					"lineCount":5
+				}
+			},
+			{
+				"label":"Liste de boutons radio",
+				"fieldTypeCode":"Rbs_Simpleform_Collection_Radio",
+				"parameters":{
+					"collectionCode":"Rbs_Geo_Collection_Countries"
+				}
+			},
+			{
+				"label":"Liste de cases à cocher",
+				"fieldTypeCode":"Rbs_Simpleform_Collection_Checkbox",
+				"parameters":{
+					"collectionCode":"Rbs_Seo_Collection_SitemapChangeFrequency"
+				}
+			},
+			{
+				"label":"Date",
+				"fieldTypeCode":"Rbs_Simpleform_Date_Picker",
+				"parameters":{
+					"placeHolder":"yyyy-mm-dd"
+				}
+			},
+			{
+				"label":"Date et heure",
+				"fieldTypeCode":"Rbs_Simpleform_DateTime_Picker",
+				"parameters":{
+					"placeHolder":"yyyy-mm-dd",
+					"timePlaceHolder":"hh:mm"
+				}
+			},
+			{
+				"label":"Pièce jointe",
+				"fieldTypeCode":"Rbs_Simpleform_File"
+			}
+		]
+	},
+	{
+		"label":"Formulaire de test de contraintes",
+		"confirmationMessage":"Youpi ça passe !",
+		"fields":
+		[
+			{
+				"label":"Texte court requis",
+				"fieldTypeCode":"Rbs_Simpleform_Text_Input",
+				"required":true,
+				"parameters":{
+					"autoComplete":true,
+					"autoCorrect":true,
+					"autoCapitalize":"sentences"
+				}
+			},
+			{
+				"label":"Texte court avec pattern",
+				"fieldTypeCode":"Rbs_Simpleform_Text_Input",
+				"helpText":"Doit respecter le pattern [A-Z][0-9]{2}",
+				"parameters":{
+					"autoComplete":true,
+					"autoCorrect":true,
+					"autoCapitalize":"sentences",
+					"placeHolder":"Z42",
+					"pattern":"[A-Z][0-9]{2}"
+				}
+			},
+			{
+				"label":"Texte court avec longueur min et max",
+				"fieldTypeCode":"Rbs_Simpleform_Text_Input",
+				"helpText":"Entre 4 et 8 caractères",
+				"parameters":{
+					"autoComplete":true,
+					"autoCorrect":true,
+					"autoCapitalize":"sentences",
+					"placeHolder":"Toto",
+					"minSize":4,
+					"maxSize":8
+				}
+			},
+			{
+				"label":"Texte long",
+				"fieldTypeCode":"Rbs_Simpleform_Text_Area",
+				"helpText":"Sur trois lignes avec capitalisation en début de mot sur iPhone",
+				"parameters":{
+					"lineCount":3,
+					"autoCorrect":true,
+					"autoCapitalize":"words",
+					"placeHolder":"Un long text..."
+				}
+			},
+			{
+				"label":"Nombre entier",
+				"fieldTypeCode":"Rbs_Simpleform_Text_Integer",
+				"helpText":"Entre 42 et 4242",
+				"parameters":{
+					"placeHolder":"47",
+					"min":42,
+					"max":4242
+				}
+			},
+			{
+				"label":"Nombre décimal",
+				"fieldTypeCode":"Rbs_Simpleform_Text_Float",
+				"helpText":"Entre 42,42 et 4242,42",
+				"parameters":{
+					"placeHolder":"47.42",
+					"min":42.42,
+					"max":4242.42
+				}
+			},
+			{
+				"label":"Liste à choix multiples",
+				"fieldTypeCode":"Rbs_Simpleform_Collection_SelectMultiple",
+				"parameters":{
+					"lineCount":10,
+					"collectionCode":"Rbs_Geo_Collection_Countries"
+				}
+			},
+			{
+				"label":"Liste de cases à cocher",
+				"fieldTypeCode":"Rbs_Simpleform_Collection_Checkbox",
+				"helpText":"Entre 2 et 4 valeurs.",
+				"parameters":{
+					"collectionCode":"Rbs_Seo_Collection_SitemapChangeFrequency",
+					"minCount":"2",
+					"maxCount":"4"
+				}
+			}
+		]
+	}
+]

@@ -1,0 +1,52 @@
+[
+	{
+		"label" : "Événement 1",
+		"title" : "Événement 1",
+		"date" : "-1 day",
+		"endDate" : "+5 days",
+		"summary" : "Résumé événement 1",
+		"text" : "Contenu événement 1",
+		"categories" : ["Catégorie 1", "Catégorie 2", "Catégorie 3", "Catégorie 4", "Catégorie 5"],
+		"publicationSections" : ["Événements", "Actualités 2"]
+	},
+	{
+		"label" : "Événement 2",
+		"title" : "Événement 2",
+		"date" : "-10 days",
+		"endDate" : "+30 days",
+		"summary" : "Résumé événement 2",
+		"text" : "Contenu événement 2",
+		"categories" : ["Catégorie 1", "Catégorie 2", "Catégorie 3", "Catégorie 4", "Catégorie 5"],
+		"publicationSections" : ["Événements", "Actualités 2"]
+	},
+	{
+		"label" : "Événement 3",
+		"title" : "Événement 3",
+		"date" : "-2days 08:30",
+		"endDate" : "-2days 17:30",
+		"summary" : "Résumé événement 3",
+		"text" : "Contenu événement 3",
+		"categories" : ["Catégorie 1", "Catégorie 5"],
+		"publicationSections" : ["Actualités et événements", "Événements"]
+	},
+	{
+		"label" : "Événement 4",
+		"title" : "Événement 4",
+		"date" : "this day 08:30",
+		"endDate" : "+2 days 17:30",
+		"summary" : "Résumé événement 4",
+		"text" : "Contenu événement 4",
+		"categories" : ["Catégorie 1", "Catégorie 2"],
+		"publicationSections" : ["Actualités 2"]
+	},
+	{
+		"label" : "Événement 5",
+		"title" : "Événement 5",
+		"date" : "last month",
+		"endDate" : "last month +20 days",
+		"summary" : "Résumé événement 5",
+		"text" : "Contenu événement 5",
+		"categories" : [],
+		"publicationSections" : ["Événements", "Actualités 2"]
+	}
+]

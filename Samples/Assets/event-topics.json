@@ -1,0 +1,16 @@
+[
+	{
+		"title" : "Actualités et événements"
+	},
+	{
+		"title" : "Actualités",
+		"parent": "Actualités et événements"
+	},
+	{
+		"title" : "Événements",
+		"parent": "Actualités et événements"
+	},
+	{
+		"title" : "Actualités 2"
+	}
+]

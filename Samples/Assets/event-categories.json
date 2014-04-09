@@ -1,0 +1,31 @@
+[
+	{
+		"label" : "Catégorie 1",
+		"title" : "Catégorie 1",
+		"description" : "Description catégorie 1",
+		"publicationSections" : ["Actualités et événements", "Actualités 2"]
+	},
+	{
+		"label" : "Catégorie 2",
+		"title" : "Catégorie 2",
+		"description" : "Description catégorie 2",
+		"publicationSections" : ["Actualités et événements", "Actualités 2"]
+	},
+	{
+		"label" : "Catégorie 3",
+		"title" : "Catégorie 3",
+		"description" : "Description catégorie 3",
+		"publicationSections" : ["Actualités et événements"]
+	},
+	{
+		"label" : "Catégorie 4",
+		"title" : "Catégorie 4",
+		"description" : "Description catégorie 4",
+		"publicationSections" : ["Actualités 2"]
+	},
+	{
+		"label" : "Catégorie 5",
+		"title" : "Catégorie 5",
+		"description" : "Description catégorie 5"
+	}
+]

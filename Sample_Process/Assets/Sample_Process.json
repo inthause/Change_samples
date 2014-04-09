@@ -1,0 +1,285 @@
+{
+	"documents": [
+		{
+			"_id": "101021",
+			"_model": "Rbs_Commerce_Process",
+			"paymentConnectors": [
+				{
+					"_id": "Connector:CHEQUE",
+					"_model": "Rbs_Payment_DeferredConnector",
+					"code": "CHEQUE",
+					"visual": {
+						"_id": "101019",
+						"_model": "Rbs_Media_Image",
+						"path": {
+							"storageURI": "change:\/\/images\/5304c0bf638e9_check_128_png"
+						},
+						"width": 128,
+						"height": 128,
+						"label": "check_128",
+						"_LCID": {
+							"fr_FR": {
+								"alt": null,
+								"creationDate": "2014-02-19T14:33:36+0000",
+								"authorName": "admin",
+								"active": true,
+								"startActivation": null,
+								"endActivation": null
+							}
+						}
+					},
+					"minAmount": 10,
+					"maxAmount": 1000,
+					"allowedCurrencyCodes": null,
+					"processingMail": false,
+					"successMail": false,
+					"errorMail": false,
+					"label": "Paiement par cheque",
+					"autoValidatePayment": false,
+					"_LCID": {
+						"fr_FR": {
+							"title": "Paiement par cheque",
+							"description": {
+								"e": "Markdown",
+								"t": null,
+								"h": null
+							},
+							"creationDate": "2014-02-19T14:34:18+0000",
+							"authorName": "admin",
+							"active": true,
+							"startActivation": null,
+							"endActivation": null,
+							"instructions": {
+								"e": "Markdown",
+								"t": "Chèque à l'ordre de:\n....",
+								"h": null
+							}
+						}
+					}
+				}
+			],
+			"shippingModes": [
+				{
+					"_id": "Mode:Collisimo",
+					"_model": "Rbs_Shipping_Mode",
+					"code": "Collisimo",
+					"visual": {
+						"_id": "101017",
+						"_model": "Rbs_Media_Image",
+						"path": {
+							"storageURI": "change:\/\/images\/5304c0609e4eb_colissimo_png"
+						},
+						"width": 251,
+						"height": 102,
+						"label": "colissimo",
+						"_LCID": {
+							"fr_FR": {
+								"alt": null,
+								"creationDate": "2014-02-19T14:32:01+0000",
+								"authorName": "admin",
+								"active": true,
+								"startActivation": null,
+								"endActivation": null
+							}
+						}
+					},
+					"hasAddress": true,
+					"label": "Collisimo",
+					"_LCID": {
+						"fr_FR": {
+							"title": "Collisimo",
+							"description": {
+								"e": "Markdown",
+								"t": null,
+								"h": null
+							},
+							"creationDate": "2014-02-19T14:32:13+0000",
+							"authorName": "admin",
+							"active": true,
+							"startActivation": null,
+							"endActivation": null
+						}
+					}
+				}
+			],
+			"modifiersOrderData": null,
+			"creationDate": "2014-02-19T14:34:35+0000",
+			"label": "le bon process",
+			"authorName": "admin",
+			"active": true,
+			"startActivation": null,
+			"endActivation": null
+		},
+		{
+			"_id": "101024",
+			"_model": "Rbs_Commerce_Fee",
+			"orderProcess": {
+				"_id": "101021"
+			},
+			"sku": {
+				"_id": "Sku:FDP_COLLISIMO",
+				"_model": "Rbs_Stock_Sku",
+				"code": "FDP_COLLISIMO",
+				"ean13": null,
+				"upc": null,
+				"jan": null,
+				"isbn": null,
+				"unit": "PC",
+				"partNumber": null,
+				"quantityIncrement": 1,
+				"minQuantity": 1,
+				"maxQuantity": null,
+				"thresholds": [
+					{
+						"l": 0,
+						"c": "UNAVAILABLE"
+					},
+					{
+						"l": 1000000,
+						"c": "AVAILABLE"
+					}
+				],
+				"virtual": true,
+				"physicalProperties": null,
+				"allowQuantitySplit": true,
+				"unlimitedInventory": true,
+				"allowBackorders": false,
+				"creationDate": "2014-02-25T12:13:46+0000",
+				"authorName": "admin",
+				"active": true,
+				"startActivation": null,
+				"endActivation": null
+			},
+			"shippingMode": {
+				"_id": "Mode:Collisimo"
+			},
+			"cartFilterData": {
+				"name": "group",
+				"parameters": {
+					"all": 0,
+					"configured": 0
+				},
+				"operator": "AND",
+				"filters": [
+					{
+						"name": "linesPriceValue",
+						"parameters": {
+							"propertyName": "linesPriceValue",
+							"operator": "lte",
+							"value": 700
+						}
+					}
+				]
+			},
+			"label": "Frais de transport Collisimo",
+			"_LCID": {
+				"fr_FR": {
+					"title": "Frais de transport Collisimo",
+					"creationDate": "2014-02-25T12:14:46+0000",
+					"authorName": "admin",
+					"active": true,
+					"startActivation": null,
+					"endActivation": null
+				}
+			}
+		},
+		{
+			"_id": "Coupon:TEST_CP1",
+			"_model": "Rbs_Discount_Coupon",
+			"orderProcess": {
+				"_id": "101021"
+			},
+			"code": "TEST_CP1",
+			"cartFilterData": {
+				"name": "group",
+				"parameters": {
+					"all": 0,
+					"configured": 0
+				},
+				"operator": "AND",
+				"filters": [
+					{
+						"name": "linesPriceValue",
+						"parameters": {
+							"propertyName": "linesPriceValue",
+							"operator": "gte",
+							"value": 200
+						}
+					}
+				]
+			},
+			"label": "10 Euros offerts",
+			"_LCID": {
+				"fr_FR": {
+					"title": "10 Euros offerts",
+					"creationDate": "2014-02-25T13:16:39+0000",
+					"authorName": "admin",
+					"active": true,
+					"startActivation": null,
+					"endActivation": null
+				}
+			}
+		},
+		{
+			"_id": "101026",
+			"_model": "Rbs_Discount_Discount",
+			"orderProcess": {
+				"_id": "101021"
+			},
+			"discountType": "rbs-discount-free-shipping-fee",
+			"parametersData": null,
+			"cartFilterData": {
+				"name": "group",
+				"parameters": {
+					"all": 0,
+					"configured": 0
+				},
+				"operator": "AND",
+				"filters": [
+					{
+						"name": "linesPriceValue",
+						"parameters": {
+							"propertyName": "linesPriceValue",
+							"operator": "gte",
+							"value": 250
+						}
+					}
+				]
+			},
+			"label": "Frais de port Offert",
+			"_LCID": {
+				"fr_FR": {
+					"title": "Frais de port Offert",
+					"creationDate": "2014-02-25T13:14:56+0000",
+					"authorName": "admin",
+					"active": true,
+					"startActivation": null,
+					"endActivation": null
+				}
+			}
+		},
+		{
+			"_id": "101025",
+			"_model": "Rbs_Price_Price",
+			"sku": {
+				"_id": "Sku:FDP_COLLISIMO"
+			},
+			"targetId": 0,
+			"priority": 25,
+			"basePrice": null,
+			"taxCategories": {
+				"TVAFR": "R-2"
+			},
+			"value": 5,
+			"discountDetail": null,
+			"ecoTax": null,
+			"optionsData": null,
+			"creationDate": "2014-02-25T12:15:58+0000",
+			"authorName": "admin",
+			"active": true,
+			"startActivation": "2014-02-25T12:15:58+0000",
+			"endActivation": null
+		}
+	],
+	"contextId": "Sample_Process"
+}

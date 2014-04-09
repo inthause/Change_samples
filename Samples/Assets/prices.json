@@ -1,0 +1,134 @@
+[
+	{
+		"product":"DUCK-HUNT",
+		"taxCategories" : {"TVAFR":"N"},
+		"boValue":20.0,
+		"boDiscountValue":null
+	},
+	{
+		"product":"NES-ZAPPER",
+		"taxCategories" : {"TVAFR":"N"},
+		"boValue":19.90,
+		"boDiscountValue":null
+	},
+	{
+		"product":"NINTENDO-CONTROLLER",
+		"taxCategories" : {"TVAFR":"N"},
+		"boValue":23.0,
+		"boDiscountValue":null
+	},
+	{
+		"product":"NES-ADVANTAGE",
+		"taxCategories" : {"TVAFR":"N"},
+		"boValue":40.0,
+		"boDiscountValue":null
+	},
+	{
+		"product":"NES-1985",
+		"taxCategories" : {"TVAFR":"N"},
+		"boValue":179.0,
+		"boDiscountValue":null
+	},
+	{
+		"product":"FAMICOM-1983",
+		"taxCategories" : {"TVAFR":"N"},
+		"boValue":249.0,
+		"boDiscountValue":null
+	},
+	{
+		"product":"COLECO-1982",
+		"taxCategories" : {"TVAFR":"N"},
+		"boValue":149.0,
+		"boDiscountValue":null
+	},
+	{
+		"product":"SMS-MULTI",
+		"taxCategories" : {"TVAFR":"N"},
+		"boValue":199.0,
+		"boDiscountValue":null
+	},
+	{
+		"product":"ATARI2600-1978",
+		"taxCategories" : {"TVAFR":"N"},
+		"boValue":188.90,
+		"boDiscountValue":null
+	},
+	{
+		"product":"ATARI7800-1986",
+		"taxCategories" : {"TVAFR":"N"},
+		"boValue":149.0,
+		"boDiscountValue":null
+	},
+	{
+		"product":"NEOGEO-1990",
+		"taxCategories" : {"TVAFR":"N"},
+		"boValue":599.0,
+		"boDiscountValue":null
+	},
+	{
+		"product":"SUPER-NINTENDO",
+		"taxCategories" : {"TVAFR":"N"},
+		"boValue":199.0,
+		"boDiscountValue":null
+	},
+	{
+		"product":"SUPER-NINTENDO-CONTROLLER",
+		"taxCategories" : {"TVAFR":"N"},
+		"boValue":18.0,
+		"boDiscountValue":null
+	},
+	{
+		"product":"SNES-GAME-ZELDA",
+		"taxCategories" : {"TVAFR":"N"},
+		"boValue":32.0,
+		"boDiscountValue":null
+	},
+	{
+		"product":"SNES-DOWNLOAD-ZELDA-TIPS",
+		"taxCategories" : {"TVAFR":"N"},
+		"boValue":9.9,
+		"boDiscountValue":null
+	},
+	{
+		"product":"GAMEBOY",
+		"taxCategories" : {"TVAFR":"N"},
+		"boValue":85.0,
+		"boDiscountValue":null
+	},
+	{
+		"product":"GAMEBOY-GAME-POKEMON",
+		"taxCategories" : {"TVAFR":"N"},
+		"boValue":15.0,
+		"boDiscountValue":null
+	},
+	{
+		"product":"GAMEBOY-LINKCABLE",
+		"taxCategories" : {"TVAFR":"N"},
+		"boValue":19.0,
+		"boDiscountValue":null
+	},
+	{
+		"product":"ARCADE-PONG",
+		"taxCategories" : {"TVAFR":"N"},
+		"boValue":1100.0,
+		"boDiscountValue":1000.0
+	},
+	{
+		"product":"MICRO-COMMODORE64",
+		"taxCategories" : {"TVAFR":"N"},
+		"boValue":609.90,
+		"boDiscountValue":null
+	},
+	{
+		"product":"MICRO-ATARI-ST",
+		"taxCategories" : {"TVAFR":"N"},
+		"boValue":405.0,
+		"boDiscountValue":null
+	},
+	{
+		"product":"MICRO-AMIGA",
+		"taxCategories" : {"TVAFR":"N"},
+		"boValue":599.0,
+		"boDiscountValue":null
+	}
+]

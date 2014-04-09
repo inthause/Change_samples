@@ -1,0 +1,134 @@
+[
+	{
+		"product":"DUCK-HUNT",
+		"taxCategories" : {"TVAFR":"R-1"},
+		"value":20.0,
+		"baseValue":null
+	},
+	{
+		"product":"NES-ZAPPER",
+		"taxCategories" : {"TVAFR":"N"},
+		"value":19.90,
+		"baseValue":null
+	},
+	{
+		"product":"NINTENDO-CONTROLLER",
+		"taxCategories" : {"TVAFR":"N"},
+		"value":23.0,
+		"baseValue":null
+	},
+	{
+		"product":"NES-ADVANTAGE",
+		"taxCategories" : {"TVAFR":"N"},
+		"value":40.0,
+		"baseValue":null
+	},
+	{
+		"product":"NES-1985",
+		"taxCategories" : {"TVAFR":"R-1"},
+		"value":179.0,
+		"baseValue":null
+	},
+	{
+		"product":"FAMICOM-1983",
+		"taxCategories" : {"TVAFR":"N"},
+		"value":249.0,
+		"baseValue":null
+	},
+	{
+		"product":"COLECO-1982",
+		"taxCategories" : {"TVAFR":"N"},
+		"value":149.0,
+		"baseValue":null
+	},
+	{
+		"product":"SMS-MULTI",
+		"taxCategories" : {"TVAFR":"R-1"},
+		"value":199.0,
+		"baseValue":null
+	},
+	{
+		"product":"ATARI2600-1978",
+		"taxCategories" : {"TVAFR":"N"},
+		"value":188.90,
+		"baseValue":null
+	},
+	{
+		"product":"ATARI7800-1986",
+		"taxCategories" : {"TVAFR":"R-2"},
+		"value":149.0,
+		"baseValue":null
+	},
+	{
+		"product":"NEOGEO-1990",
+		"taxCategories" : {"TVAFR":"N"},
+		"value":599.0,
+		"baseValue":null
+	},
+	{
+		"product":"SUPER-NINTENDO",
+		"taxCategories" : {"TVAFR":"N"},
+		"value":199.0,
+		"baseValue":null
+	},
+	{
+		"product":"SUPER-NINTENDO-CONTROLLER",
+		"taxCategories" : {"TVAFR":"N"},
+		"value":18.0,
+		"baseValue":null
+	},
+	{
+		"product":"SNES-GAME-ZELDA",
+		"taxCategories" : {"TVAFR":"R-1"},
+		"value":32.0,
+		"baseValue":null
+	},
+	{
+		"product":"SNES-DOWNLOAD-ZELDA-TIPS",
+		"taxCategories" : {"TVAFR":"N"},
+		"value":9.9,
+		"baseValue":null
+	},
+	{
+		"product":"GAMEBOY",
+		"taxCategories" : {"TVAFR":"N"},
+		"value":85.0,
+		"baseValue":null
+	},
+	{
+		"product":"GAMEBOY-GAME-POKEMON",
+		"taxCategories" : {"TVAFR":"R-2"},
+		"value":15.0,
+		"baseValue":null
+	},
+	{
+		"product":"GAMEBOY-LINKCABLE",
+		"taxCategories" : {"TVAFR":"N"},
+		"value":19.0,
+		"baseValue":null
+	},
+	{
+		"product":"ARCADE-PONG",
+		"taxCategories" : {"TVAFR":"N"},
+		"value":1100.0,
+		"baseValue":1150.0
+	},
+	{
+		"product":"MICRO-COMMODORE64",
+		"taxCategories" : {"TVAFR":"R-2"},
+		"value":609.90,
+		"baseValue":649.99
+	},
+	{
+		"product":"MICRO-ATARI-ST",
+		"taxCategories" : {"TVAFR":"N"},
+		"value":405.0,
+		"baseValue":null
+	},
+	{
+		"product":"MICRO-AMIGA",
+		"taxCategories" : {"TVAFR":"N"},
+		"value":599.0,
+		"baseValue":625.99
+	}
+]

@@ -1,0 +1,199 @@
+[
+	{
+		"label" : "Duck Hunt",
+		"title" : "Duck Hunt",
+		"description" : "Duck Hunt est un jeu vidéo de tir au pistolet développé et édité par Nintendo, sorti en 1985 sur NES. Il est le premier jeu à exploiter le pistolet de la console, le NES Zapper, via une simulation de chasse aux canards et de tir aux pigeons d'argile.\nLe jeu fut livré avec les lots « Action Set » et « Deluxe Set » de la console, mais fut également mis en vente séparément.\nCe jeu vidéo est l'adaptation du jeu Duck Hunt (de Nintendo toujours) sorti en 1977, qui est une sorte de tir aux pigeons électronique. Il est composé d'un petit projecteur qui envoie les canards sur le mur et d'un fusil pour les abattre. C'est devenu un objet collector.\nLe jeu se vendait aussi avec Super Mario Bros sur la même cartouche. (<a href=\"http://fr.wikipedia.org/wiki/Duck_Hunt\">Voir l'article Wikipedia</a>).",
+		"code" : "DUCK-HUNT",
+		"sku" : "DUCK-HUNT",
+		"brand": "Nintendo",
+		"visuals":["Duck Hunt box"]
+	},
+	{
+		"label" : "NES Zapper",
+		"title" : "NES Zapper",
+		"description" : "Le NES Zapper (ou Famicom Light Gun au Japon) est un pistolet électronique, vendu comme accessoire de la Nintendo Entertainment System (NES) en 1985 et de la Nintendo Family Computer (Famicom) en 1984. La version japonaise est une représentation réaliste d'un revolver, alors que la version occidentale ressemble plus à un jouet, gardant le schéma de couleur de la NES. Le NES Zapper original est gris, mais une autre version sortit plus tard en couleur orange, la première ressemblant trop à une arme réelle pour le marché occidental. Il permet aux joueurs de tirer sur la télévision, sur des cibles telles que des canards, des pigeons d'argile ou encore des bandits.(<a href=\"http://fr.wikipedia.org/wiki/NES_Zapper\">Voir l'article Wikipedia</a>).",
+		"code" : "NES-ZAPPER",
+		"sku" : "NES-ZAPPER",
+		"brand":"Nintendo",
+		"visuals":["NES Zapper", "NES Zapper Orange"]
+	},
+	{
+		"label" : "Manette Nintendo",
+		"title" : "Manette Nintendo",
+		"description" : "La manette de jeu utilisée par la NES et la Famicom",
+		"code" : "NINTENDO-CONTROLLER",
+		"sku" : "NINTENDO-CONTROLLER",
+		"brand":"Nintendo",
+		"visuals":["Manette Nes 1", "Manette Famicom 1"]
+	},
+	{
+		"label" : "Joystick pour la NES",
+		"title" : "Joystick pour la NES",
+		"description" : "Le NES Advantage est un grand joystick de type arcade développé pour la console Nintendo Entertainment System et vendu à partir de 1987. Ce joystick est censé reposer sur une surface plane afin d'offrir un meilleur confort de jeu (sur une table ou sur le sol). Ainsi positionné celui-ci peut être utilisé comme le joystick d'un jeu d'arcade, avec une main utilisant le stick et l'autre appuyant sur les boutons.(<a href=\"http://fr.wikipedia.org/wiki/NES_Advantage\">Voir l'article Wikipedia</a>)",
+		"code" : "NES-ADVANTAGE",
+		"sku" : "NES-ADVANTAGE",
+		"brand":"Nintendo",
+		"visuals":["Joystick Nes 1"]
+	},
+	{
+		"label" : "Nintendo Entertainment System (NES)",
+		"title" : "Nintendo Entertainment System (NES)",
+		"description" : "Le Nintendo Entertainment System (en français : le système de divertissement de Nintendo), ou NES, est une console de jeux vidéo 8 bits du constructeur japonais Nintendo sortie en 1985 en Amérique du Nord et en 1986-1987 en Europe et en Australie. Son équivalent japonais est la Family Computer (ファミリーコンピュータ, Famirī Konpyūta), ou Famicom (ファミコン, Famikon), sortie quelques années avant, en 1983. Le succès de la console fut énorme au Japon et en Amérique du Nord, ce qui aida à redynamiser l'industrie du jeu vidéo après le krach du jeu vidéo de 1983, et ce qui fixa les normes pour les consoles suivantes, du game design (le premier jeu moderne de plateforme, Super Mario Bros., était le premier jeu vidéo qui justifiait l'achat de la console à lui tout seul, c'est un killer game) aux procédures de gestion. La NES est également la première console pour laquelle Nintendo alla au-devant des développeurs tiers. (<a href=\"http://fr.wikipedia.org/wiki/Nintendo_Entertainment_System\">Voir l'article Wikipedia</a>)",
+		"code" : "NES-1985",
+		"sku" : "NES-1985",
+		"brand":"Nintendo",
+		"visuals":["NES (set)", "NES (controller)"]
+	},
+	{
+		"label" : "Famicom",
+		"title" : "Famicom",
+		"description" : "La Famicom (ファミコン, Famikon), ou Family Computer (ファミリーコンピュータ, Famirī Konpyūta), est une console de jeux vidéo créée par Nintendo en 1983. Elle est sortie dans une version légèrement différente en Europe et aux États-Unis, sous le nom Nintendo Entertainment System (NES).Son nom est la réduction de Family Computer. À sa sortie au Japon, la Famicom se vend à 500 000 exemplaires en deux semaines. Son succès vient du fait qu'aucun concurrent n'est présent alors. L'industrie des jeux vidéo sort d'une vaste crise, et personne ne s'imagine le succès de la Famicom. Cependant, imitant Nintendo, Sega sort la Sega Mark III (Master System en Europe et aux États-Unis).Nintendo élargit sa clientèle en exportant en 1985 aux États-Unis, la console rebaptisée Nintendo Entertainment System. Encore une fois ongné des contrats avec les éditeurs tiers afin de s'assurer un bon catalogue de jeux. Nintendo, et son patron Hiroshi Yamauchi, sont persuadés que les jeux sont l'argument de vente numéro un.\nCette console connut un succès phénoménal, Nintendo estimant en avoir vendu 61 millions. À la fin des années 1980, au Japon et aux États-Unis, un foyer sur trois était équipé de Famicom. À l'époque, Nintendo fut l'entreprise japonaise la plus rentable, devant Toyota. Plus de 1 200 jeux furent développés pour cette console.\nIl existe plusieurs versions de la console : la Famicom au Japon, la NES en Europe, aux États-Unis et en Australie, la AV Famicom qui est une version relookée et la Twin Famicom qui regroupe la console et le Disk System en une seule machine. (<a href=\"http://fr.wikipedia.org/wiki/Famicom\">Voir l'article Wikipedia</a>)",
+		"code" : "FAMICOM-1983",
+		"sku" : "FAMICOM-1983",
+		"brand":"Nintendo",
+		"visuals":["FAMICOM (set)", "FAMICOM (controller)"]
+	},
+	{
+		"label" : "Colecovision",
+		"title" : "Colecovision",
+		"description" : "La Colecovision est une console de jeu vidéo de seconde génération commercialisée par Coleco (Connecticut Leather Company), sortie en août 1982. Elle propose des graphismes et des manettes similaires aux jeux d'arcade de l'époque.\nLe Colecovision est commercialisé à l'été 1982 pour un prix de 199 $. Le catalogue de lancement comprend douze titres, avec dix titres à venir en plus. Finalement, environ 170 titres sont sortis sur cartouche pendant toute sa vie. La majorité des titres de son catalogue sont des conversions de jeux d'arcade.\nColeco a commercialisé un module qui rend la console compatible avec l'Atari 2600, lui apportant la plus vaste bibliothèque de jeux de toutes les consoles du moment. Le module a provoqué une action judiciaire d'Atari, mais cette dernière n'a pas pu en empêcher les ventes du module. Pour l'anecdote, grâce à ce module les possesseurs de cartouches VCS2600 français découvraient enfin leurs jeux en 128 couleurs au lieu de la simple colorisation suspecte 8 couleurs de la version noir et blanc de ceux-ci, sur VCS2600 SECAM.",
+		"code" : "COLECO-1982",
+		"sku" : "COLECO-1982",
+		"visuals":["Colecovision"]
+	},
+	{
+		"label" : "Master System",
+		"title" : "Master System",
+		"description" : "La console qui a précédé la Master System au Japon est la SG-1000 Mark III, qui succède à la SG-1000 et la SG-1000 II. Elle sort en 1985 au Japon, avec pour mascotte Alex Kidd.\nLa console est redessinée avant d'être vendue aux États-Unis sous le nom Sega Master System en juin 1986, soit un an après la sortie de la NES. Son prix de vente est alors de 200 dollars.\nLa console sort alors un peu partout dans le monde, y compris au Japon, en 1987 sous son nouveau nom. Mais la version japonaise n'était pas qu'un simple recarrossage de la SG-1000 Mark III puisqu'elle incorporait pour le son un module FM qu'exploitaient certains jeux.\nBien que la Master System soit sur certains points plus avancée que la NES, elle n'atteint pas le même niveau de popularité aux États-Unis. Ce manque de succès a de multiples causes. On peut citer la quantité de jeux qui a joué en l'avantage de la NES, ainsi que l'année qui sépare la sortie des deux consoles. L'accord qui existait entre Nintendo et ses éditeurs a certainement eu un impact. En effet, le contrat des éditeurs stipulait que ceux-ci ne devaient produire que pour la console de Nintendo. Durant les quatre premiers mois suivant sa sortie, la Master System s'est vendue à 125 000 exemplaires contre 2 000 000 pour la NES dans la même période.",
+		"code" : "SMS-MULTI",
+		"sku" : "SMS-MULTI",
+		"brand":"Coleco",
+		"visuals":["SMS I", "SMS II"]
+	},
+	{
+		"label" : "Atari 2660 (Atari VCS)",
+		"title" : "Atari 2660 (Atari VCS)",
+		"description" : "L’Atari 2600 est lancée en octobre 1977 au prix de 199 USD (de l’époque), livrée avec une paire de joysticks et le jeu Combat. C’est la troisième console à cartouches, après la Channel F de Fairchild et la RCA Studio II, commercialisée un an plus tôt (les précédentes consoles du marché intègrent un ou plusieurs jeux sans la possibilité d’en adjoindre d’autres). À l’origine, le nom de la console est Atari VCS, pour Video Computer System. Le nom Atari 2600 est utilisé pour la première fois en 1982 lors de la sortie de l’Atari 5200. Avec entre 25 et 40 millions d’unités vendues, l’Atari 2600 est la console la plus populaire de sa génération. Le succès est historique, marquant l’avènement d’un marché de masse pour le jeu vidéo. La console rapporte beaucoup d’argent à la société Atari jusqu’en 1983 et la crise du marché du jeu vidéo aux États-Unis. Vendue principalement aux États-Unis et en Europe, elle est produite jusqu’en 1991, ce qui constitue un record de longévité sur les marchés occidentaux.",
+		"code" : "ATARI2600-1978",
+		"sku" : "ATARI2600-1978",
+		"brand":"Atari",
+		"visuals":["Atari 2600"]
+	},
+	{
+		"label" : "Atari 7800",
+		"title" : "Atari 7800",
+		"description" : "L'Atari 7800 ProSystem, ou simplement Atari 7800, est une console sortie par la Société Atari en janvier 1986. La sortie originale était prévue deux ans plus tôt sous Atari Inc. Les 7800 avaient à l'origine été conçus pour remplacer l'Atari 5200 en 1984, mais ont été temporairement retardées en raison de la vente de la société après l'échec du marché du jeu vidéo. En janvier 1986, les 7800 ont été sorties et rivaliseraient cette année avec la NES de Nintendo et la Master System de Sega. L'Atari 7800 a des manettes simples, retrocompatibles avec l'Atari 2600. En 2009, IGN a élu l'Atari 7800 en tant que 17ème meilleure console de jeu vidéo de tous les temps.\nL'Atari 7800 ProSystem était le premier système de jeu d'Atari conçu par une société extérieure, General Computer Corporation (GCC). Le système a été conçu en 1983-1984 avec un lancement grand public prévu en juin 1984, mais qui a été annulé suite à la vente de la société à Tramiel Technology Ltd le 2 juillet 1984. Le projet était à l'origine appelé l'Atari 3600, rebaptisé ensuite l'Atari 7800.\nPlusieurs facteurs ont influencé la conception de la 7800. D'abord, Atari a fait face à la pression montante du ColecoVision, qui affichait alors des graphismes plus aptes à refléter les jeux d'arcade de l'époque par rapport à l'Atari 2600. Deuxièmement, l'Atari 5200 (le successeur de l'Atari 2600) avait été largement critiquée pour l'incapacité à jouer aux jeux d'Atari 2600 sans adaptateur. Finalement, laissant tomber les prix d'ordinateurs familiaux qui ont fait de la Commodore 64 un échec car l'achat d'un ordinateur familial était un meilleur investissement, un PC offre à l'époque la possibilité de jouer à des jeux au gameplay plus performant et pouvait être utilisé dans d'autres buts, comme le traitement de texte.",
+		"code" : "ATARI7800-1986",
+		"sku" : "ATARI7800-1986",
+		"brand":"Atari",
+		"visuals":["Atari 7800"]
+	},
+	{
+		"label" : "Neo-Geo AES",
+		"title" : "Neo-Geo AES",
+		"description" : "La Neo-Geo, appelée aussi NeoGeo Advanced Entertainment System, est une console de jeu vidéo sortie en 1990 à la location et en 1991 à la vente.\nConçue par la société japonaise SNK, elle a la particularité d'être,d'un point de vue technique,strictement identique au système d'arcade Neo-Geo MVS, avec lequel elle partage une ludothèque commune. La console est connue pour sa ludothèque de jeu d'arcade 2D de qualité, dont une grande partie sont des jeux de combat, ainsi que pour son prix très élevé et par sa très grande longévité. Au vu de son prix et de ses caractéristiques par rapport aux consoles concurrentes de la même époque, elle est considérée par beaucoup comme la « Rolls Royce » des consoles. (<a href=\"http://fr.wikipedia.org/wiki/Neo-Geo_AES\">Voir l'article Wikipedia</a>)",
+		"code" : "NEOGEO-1990",
+		"sku" : "NEOGEO-1990",
+		"brand":"SNK",
+		"visuals":["NEO-GEO Main", "NEO-GEO Alternate View"]
+	},
+	{
+		"label" : "Super Nintendo",
+		"title" : "Super Nintendo",
+		"description" : "La Super Nintendo est une console de jeux vidéo de salon 16 bits du constructeur japonais Nintendo sortie en 1992 en Europe. Son équivalent japonais est la Super Famicom (スーパーファミコン) sortie en 1990 et arborant quasiment le même design. À noter qu'en Corée du Sud, la Super Famicom est distribuée par Hyundai Electronics sous le nom de Super Comboy (슈퍼 컴보이). L'équivalent nord-américain, le Super Nintendo Entertainment System (Super NES) présente, en revanche, un look résolument différent. Les consoles sont zonées (Asie, Europe, Amérique) mais les différences concrètes sont inexistantes ou aisément contournables. La Super Nintendo, sort pour contrer la Megadrive de Sega (16 bits) et dans une moindre mesure la PC-Engine de NEC (16 bits processeur graphique/8 bits processeur principal) et la Neo-Geo AES de SNK (16 bits). La Super Nintendo sera la mieux vendue des consoles de son époque et malgré ses faibles capacités sur le papier, elle tiendra encore tête à des consoles de génération suivantes : 3DO, Saturn de Sega.",
+		"code" : "SUPER-NINTENDO",
+		"sku" : "SUPER-NINTENDO",
+		"brand":"Nintendo",
+		"visuals":["Super NES", "Super NES PAL", "Super NES PAL (alternate)", "Super famicom"]
+	},
+	{
+		"label" : "Manette de Super Nintendo",
+		"title" : "Manette de Super Nintendo",
+		"description" : "La manette de la Super Nintendo eu un design style plus \"os de chien (dog-bone)\" que celui de la NES plus \"carré\" et deux boutons en plus \"X\" et \"Y\" sur la façade qui sont répartis façon carreaux d'un jeux de carte. Deux autres boutons au dessus de la manette \"L\" et \"R\" viennent s'ajouter en épousant la forme arrondie de la manette, concept qui a été repris par beaucoup de manette sorties par la suite. Cette manette dispose donc d'un total de 8 boutons (4 pour la NES). Le fait d'avoir six boutons actifs (A, B, X, Y, L, R) a permit la popularité des jeux de la séries Street Fighter, sortit précédemment sur Arcade.",
+		"code" : "SUPER-NINTENDO-CONTROLLER",
+		"sku" : "SUPER-NINTENDO-CONTROLLER",
+		"brand":"Nintendo",
+		"visuals":["Super nintendo controller", "SNES controller", "Super famicom controller"]
+	},
+	{
+		"label" : "The Legend of Zelda: A Link to the Past",
+		"title" : "The Legend of Zelda: A Link to the Past",
+		"description" : "The Legend of Zelda: A Link to the Past (ゼルダの伝説 神々のトライフォース, Zeruda no Densetsu Kamigami no Toraifōsu, litt. La Légende de Zelda : La Triforce des dieux) est un jeu vidéo d'action-aventure édité par Nintendo et développé par Nintendo EAD sorti sur Super Nintendo le 21 novembre 1991 au Japon, le 13 avril 1992 aux États-Unis et le 24 septembre 1992 en Europe, sur Game Boy Advance le 2 décembre 2002 aux États-Unis, le 14 mars 2003 au Japon et le 28 mars 2003 en Europe ainsi que sur la console virtuelle le 2 décembre 2006 au Japon, le 22 janvier 2007 aux États-Unis et le 23 mars 2007 en Europe.(<a href=\"http://fr.wikipedia.org/wiki/The_Legend_of_Zelda:_A_Link_to_the_Past\">Voir l'article Wikipedia</a>)",
+		"code" : "SNES-GAME-ZELDA",
+		"sku" : "SNES-GAME-ZELDA",
+		"brand":"Nintendo",
+		"visuals":["The Legend of Zelda"]
+	},
+	{
+		"label" : "Soluce de Zelda LttP",
+		"title" : "Soluce de Zelda LttP",
+		"description" : "La soluce du jeu The Legend of Zelda: A Link to the Past, téléchargeable au format PDF",
+		"code" : "SNES-DOWNLOAD-ZELDA-TIPS",
+		"sku" : "SNES-DOWNLOAD-ZELDA-TIPS",
+		"brand":"Nintendo",
+		"visuals":["The Legend of Zelda Soluce"]
+	},
+	{
+		"label" : "Game boy",
+		"title" : "Game boy",
+		"description" : "Le (ou la) Game Boy (ゲームボーイ, Gēmu Bōi) est une console de jeux vidéo portable créée par Nintendo en 1989. (<a href=\"http://fr.wikipedia.org/wiki/Gameboy\">Voir l'article Wikipedia</a>)",
+		"code" : "GAMEBOY",
+		"sku" : "GAMEBOY",
+		"brand":"Nintendo",
+		"visuals":["Gameboy classic 1", "Gameboy classic 2", "Gameboy pocket 1", "Gameboy clear 1"]
+	},
+	{
+		"label" : "Pokemon",
+		"title" : "Pokemon",
+		"description" : "Pokémon version rouge et Pokémon version bleue sont les deux éditions du premier jeu vidéo de rôle japonais de la licence Pokémon développé par Game Freak sous la direction de Satoshi Tajiri. Elles sont éditées par Nintendo sur la console portable Game Boy au Japon en 1996 (originellement dans des versions version rouge et version verte), en Amérique du Nord en 1998, puis en Europe et en Australie en 1999.(<a href=\"http://fr.wikipedia.org/wiki/Pok%C3%A9mon_Rouge_et_Bleu\">Voir l'article Wikipedia</a>)",
+		"code" : "GAMEBOY-GAME-POKEMON",
+		"sku" : "GAMEBOY-GAME-POKEMON",
+		"brand":"Nintendo",
+		"visuals":["Pokemon version bleu 1", "Pokemon version rouge 1"]
+	},
+	{
+		"label" : "Câble link pour Game boy",
+		"title" : "Câble link pour Game boy",
+		"description" : "Le câble link est un câble permettant de lier deux ou plusieurs consoles de jeu vidéo portables pour échanger du contenu ou jouer ensemble, sur consoles séparées. Le terme a été popularisé par la Game Boy de Nintendo et le succès de jeux tels que Tetris, joués par consoles interposées.(<a href=\"http://fr.wikipedia.org/wiki/C%C3%A2ble_Link\">Voir l'article Wikipedia</a>)",
+		"code" : "GAMEBOY-LINKCABLE",
+		"sku" : "GAMEBOY-LINKCABLE",
+		"brand":"Nintendo",
+		"visuals":["Câble link pour gameboy 1"]
+	},
+	{
+		"label" : "Borne d'arcade Pong",
+		"title" : "Borne d'arcade Pong",
+		"description" : "Pong est un jeu vidéo inspiré du tennis de table développé par Ralph Baer et son équipe à Sanders Associates en 1967. Après y avoir joué lors d'une première démonstration en mai 1972, Nolan Bushnell, créateur de la société Atari, en fait une version améliorée: Pong. C'est le premier jeu vidéo à connaître un succès populaire. L'idée du jeu est basée sur un jeu inclus dans l'Odyssey de Magnavox, ce qui résultat en une poursuite contre Atari. Mis sur le marché fin 1972 en tant que borne d'arcade, il est proposé dans une console de salon à partir de 1975. Il est d'abord commercialisé par Sears, puis par Atari un an après.(<a href=\"http://fr.wikipedia.org/wiki/Pong\">Voir l'article Wikipedia</a>)",
+		"code" : "ARCADE-PONG",
+		"sku" : "ARCADE-PONG",
+		"brand":"Atari",
+		"visuals":["Arcade"]
+	},
+	{
+		"label" : "Commodore 64",
+		"title" : "Commodore 64",
+		"description" : "Le Commodore 64 est un ordinateur personnel conçu par Commodore Business Machines Inc. en 1982, sous l'égide de Jack Tramiel. Il fut la première machine vendue à plusieurs millions d'exemplaires (de 17 à 25 millions selon les estimations), et il reste le modèle d'ordinateur le plus vendu à ce jour.(<a href=\"http://fr.wikipedia.org/wiki/Commodore_64\">Voir l'article Wikipedia</a>)",
+		"code" : "MICRO-COMMODORE64",
+		"sku" : "MICRO-COMMODORE64",
+		"brand":"Commodore",
+		"visuals":["Commodore 64 1"]
+	},
+	{
+		"label" : "Atari ST",
+		"title" : "Atari ST",
+		"description" : "Les Atari ST forment une famille d'ordinateurs personnels conçus par Atari dont le succès commercial a marqué la deuxième moitié des années 1980. Le succès fut autant grand public (Jeux vidéo) que professionnel (Traitement de texte, PAO et surtout MAO).(<a href=\"http://fr.wikipedia.org/wiki/Atari_ST\">Voir l'article Wikipedia</a>)",
+		"code" : "MICRO-ATARI-ST",
+		"sku" : "MICRO-ATARI-ST",
+		"brand":"Atari",
+		"visuals":["Atari ST 1"]
+	},
+	{
+		"label" : "Amiga",
+		"title" : "Amiga",
+		"description" : "L’Amiga est une famille d’ordinateurs personnels commercialisée par Commodore International entre 1985 et 1994. Dans les années 1990 il était très populaire sur la scène démo, parmi les amateurs de jeux vidéo et dans l'industrie du cinéma et de la télévision. L'Amiga offrait alors un affichage plus coloré et plus fluide et un multitâches supérieur à celles des produits concurrents, une interface graphique similaire à celle du Macintosh et des logiciels de traitement de texte, de musique assistée par ordinateur et de dessin.(<a href=\"http://fr.wikipedia.org/wiki/Amiga\">Voir l'article Wikipedia</a>)",
+		"code" : "MICRO-AMIGA",
+		"sku" : "MICRO-AMIGA",
+		"brand":"Commodore",
+		"visuals":["Amiga 500 1", "Amiga 500 2", "Amiga 500 3"]
+	}
+]
