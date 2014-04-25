@@ -6,37 +6,6 @@ require_once __DIR__ . '/AbstractSample.php';
 class Catalog extends AbstractSample
 {
 	/**
-	 * @param string $code
-	 * @return \Rbs\Price\Documents\Tax
-	 */
-	protected function getTaxByeCode($code)
-	{
-		$query = $this->getDocumentManager()->getNewQuery('Rbs_Price_Tax');
-		$query->andPredicates($query->eq('code', $code));
-		return $query->getFirstDocument();
-	}
-
-	/**
-	 * @return \Rbs\Price\Documents\BillingArea
-	 */
-	protected function getBillingArea()
-	{
-		$query = $this->getDocumentManager()->getNewQuery('Rbs_Price_BillingArea');
-		$billingArea = $query->getFirstDocument();
-		if ($billingArea === null)
-		{
-			/* @var $billingArea \Rbs\Price\Documents\BillingArea */
-			$billingArea = $this->getDocumentManager()->getNewDocumentInstanceByModelName('Rbs_Price_BillingArea');
-			$billingArea->setLabel('Sample FR Billing Area');
-			$billingArea->setCurrencyCode('EUR');
-			$billingArea->setTaxes(array($this->getTaxByeCode('TVAFR')));
-			$billingArea->save();
-		}
-
-		return $billingArea;
-	}
-
-	/**
 	 * @return \Rbs\Store\Documents\WebStore
 	 */
 	protected function getWebStore()
@@ -45,12 +14,7 @@ class Catalog extends AbstractSample
 		$webStore = $query->getFirstDocument();
 		if ($webStore === null)
 		{
-			/* @var $webStore \Rbs\Store\Documents\WebStore */
-			$webStore = $this->getDocumentManager()->getNewDocumentInstanceByModelName('Rbs_Store_WebStore');
-			$webStore->setLabel('Sample Web Store');
-			$webStore->setBillingAreas(array($this->getBillingArea()));
-			$webStore->setPricesValueWithTax(true);
-			$webStore->save();
+			$this->log('ERROR: Web store is not initialized, have you executed Initialize.php before this sample?');
 		}
 		return $webStore;
 	}
@@ -63,6 +27,11 @@ class Catalog extends AbstractSample
 		$transactionManager->begin();
 
 		$webStore = $this->getWebStore();
+		if (!$webStore)
+		{
+			$this->log('ERROR: Cannot continue install without web store');
+			return;
+		}
 		$billingArea = $webStore->getBillingAreas()[0];
 
 		$this->log('Install images...');
@@ -115,9 +84,18 @@ class Catalog extends AbstractSample
 
 		$commerceServices = $this->getCommerceServices();
 		$cm = $commerceServices->getCatalogManager();
-		$website = $this->getDefaultWebsite();
+		$commerceWebStoreInitializationContext = 'Rbs Commerce WebStore Initialize ' . $this->getDefaultWebsite()->getId() . ' ' . $webStore->getId();
+		$shopTopics = $this->getApplicationServices()->getDocumentCodeManager()->getDocumentsByCode('rbs_commerce_initialize_store_topic', $commerceWebStoreInitializationContext);
 		$template = $this->getPageTemplate('Rbs_Demo_Nosidebarpage');
-		$shopTopic = $this->getTopic($website, 'Boutique');
+		if (isset($shopTopics[0]) && $shopTopics[0] != null)
+		{
+			$shopTopic = $shopTopics[0];
+		}
+		else
+		{
+			$this->log('ERROR: user account topic can\'t be found after the web store initialization');
+			return;
+		}
 
 		$data = array(
 			'Ordinateurs' => array('MICRO-COMMODORE64', 'MICRO-ATARI-ST', 'MICRO-AMIGA'),
@@ -176,8 +154,6 @@ class Catalog extends AbstractSample
 				$cm->addProductInProductList($product, $productList, null);
 			}
 		}
-
-		$this->importPageJSON(__DIR__ . '/Assets/catalog-pages.json', $website);
 
 		$transactionManager->commit();
 	}
