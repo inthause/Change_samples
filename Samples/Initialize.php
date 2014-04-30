@@ -20,14 +20,14 @@ class Initialize extends AbstractSample
 
 		//initialize website
 		$context = 'Rbs Generic Website Initialize ' . $website->getId();
-		$event = new \Change\Http\Event();
-		$event->setParams($this->getDefaultEventArguments());
-		$post = new \Zend\Stdlib\Parameters([
+		$params = array_merge($this->getDefaultEventArguments(), [
 			'websiteId' => $website->getId(), 'sidebarTemplateId' => $sidebarTemplate->getId(),
 			'noSidebarTemplateId' => $noSidebarTemplate->getId(), 'LCID' => 'fr_FR'
 		]);
-		$event->setRequest((new \Change\Http\Request())->setPost($post));
-		$initializeWebsite = new \Rbs\Generic\Setup\Initialize();
+		$event = new \Change\Commands\Events\Event('InitializeWebsiteEvent', $this->getApplication(), $params);
+		$response = new \Change\Commands\Events\RestCommandResponse();
+		$event->setCommandResponse($response);
+		$initializeWebsite = new \Rbs\Generic\Commands\InitializeWebsite();
 		$initializeWebsite->execute($event);
 		$userAccountTopics = $this->getApplicationServices()->getDocumentCodeManager()->getDocumentsByCode('rbs_generic_initialize_user_account_topic', $context);
 		if (isset($userAccountTopics[0]) && $userAccountTopics[0] != null)
@@ -41,22 +41,16 @@ class Initialize extends AbstractSample
 		}
 
 		//initialize web store
-		$post = new \Zend\Stdlib\Parameters([
-			'websiteId' => $website->getId(), 'storeId' => $webStore->getId(), 'sidebarTemplateId' => $sidebarTemplate->getId(),
-			'noSidebarTemplateId' => $noSidebarTemplate->getId(), 'LCID' => 'fr_FR', 'userAccountTopicId' => $userAccountTopic->getId()
-		]);
-		$event->setRequest((new \Change\Http\Request())->setPost($post));
-		$initializeWebsite = new \Rbs\Commerce\Setup\InitializeWebStore();
+		$params['userAccountTopicId'] = $userAccountTopic->getId();
+		$params['storeId'] = $webStore->getId();
+		$event->setParams($params);
+		$initializeWebsite = new \Rbs\Commerce\Commands\InitializeWebStore();
 		$initializeWebsite->execute($event);
 
 		//initialize order process
-		$post = new \Zend\Stdlib\Parameters([
-			'websiteId' => $website->getId(), 'storeId' => $webStore->getId(), 'sidebarTemplateId' => $sidebarTemplate->getId(),
-			'noSidebarTemplateId' => $noSidebarTemplate->getId(), 'popinTemplateId' => $popinTemplate->getId(),
-			'LCID' => 'fr_FR', 'userAccountTopicId' => $userAccountTopic->getId()
-		]);
-		$event->setRequest((new \Change\Http\Request())->setPost($post));
-		$initializeWebsite = new \Rbs\Commerce\Setup\InitializeOrderProcess();
+		$params['popinTemplateId'] = $popinTemplate->getId();
+		$event->setParams($params);
+		$initializeWebsite = new \Rbs\Commerce\Commands\InitializeOrderProcess();
 		$initializeWebsite->execute($event);
 	}
 
