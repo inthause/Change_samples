@@ -14,7 +14,7 @@ class Initialize extends AbstractSample
 		$website = $this->getDefaultWebsite();
 		$sidebarTemplate = $this->getPageTemplate('Rbs_Demo_Sidebarpage');
 		$noSidebarTemplate = $this->getPageTemplate('Rbs_Demo_Nosidebarpage');
-		$popinTemplate = $this->getPageTemplate('Rbs_Demo_Popin');
+		$popinTemplate = $this->getPageTemplate('Rbs_Common_Popin');
 		$webStore = $this->getWebStore();
 		$transactionManager->commit();
 
