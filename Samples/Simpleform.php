@@ -42,7 +42,7 @@ class Simpleform extends AbstractSample
 			$property = $field->getDocumentModel()->getProperty($propertyName);
 			if ($property)
 			{
-				$c = new \Change\Http\Rest\PropertyConverter($field, $property, $this->getDocumentManager());
+				$c = new \Change\Http\Rest\V1\PropertyConverter($field, $property, $this->getDocumentManager());
 				$c->setPropertyValue($restValue);
 			}
 		}
@@ -77,7 +77,7 @@ class Simpleform extends AbstractSample
 			$property = $form->getDocumentModel()->getProperty($propertyName);
 			if ($property)
 			{
-				$c = new \Change\Http\Rest\PropertyConverter($form, $property, $this->getDocumentManager());
+				$c = new \Change\Http\Rest\V1\PropertyConverter($form, $property, $this->getDocumentManager());
 				$c->setPropertyValue($restValue);
 			}
 		}

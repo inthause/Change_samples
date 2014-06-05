@@ -191,7 +191,7 @@ class Catalog extends AbstractSample
 			$property = $image->getDocumentModel()->getProperty($propertyName);
 			if ($property)
 			{
-				$c = new \Change\Http\Rest\PropertyConverter($image, $property, $this->getDocumentManager());
+				$c = new \Change\Http\Rest\V1\PropertyConverter($image, $property, $this->getDocumentManager());
 				$c->setPropertyValue($restValue);
 			}
 		}
@@ -217,7 +217,7 @@ class Catalog extends AbstractSample
 			$property = $brand->getDocumentModel()->getProperty($propertyName);
 			if ($property)
 			{
-				$c = new \Change\Http\Rest\PropertyConverter($brand, $property, $this->getDocumentManager());
+				$c = new \Change\Http\Rest\V1\PropertyConverter($brand, $property, $this->getDocumentManager());
 				$c->setPropertyValue($restValue);
 			}
 		}
@@ -265,7 +265,7 @@ class Catalog extends AbstractSample
 			$property = $product->getDocumentModel()->getProperty($propertyName);
 			if ($property)
 			{
-				$c = new \Change\Http\Rest\PropertyConverter($product, $property, $this->getDocumentManager());
+				$c = new \Change\Http\Rest\V1\PropertyConverter($product, $property, $this->getDocumentManager());
 				$c->setPropertyValue($restValue);
 			}
 		}
@@ -289,7 +289,7 @@ class Catalog extends AbstractSample
 			$property = $sku->getDocumentModel()->getProperty($propertyName);
 			if ($property)
 			{
-				$c = new \Change\Http\Rest\PropertyConverter($sku, $property, $this->getDocumentManager());
+				$c = new \Change\Http\Rest\V1\PropertyConverter($sku, $property, $this->getDocumentManager());
 				$c->setPropertyValue($restValue);
 			}
 		}
@@ -326,7 +326,7 @@ class Catalog extends AbstractSample
 			$property = $price->getDocumentModel()->getProperty($propertyName);
 			if ($property)
 			{
-				$c = new \Change\Http\Rest\PropertyConverter($price, $property, $this->getDocumentManager());
+				$c = new \Change\Http\Rest\V1\PropertyConverter($price, $property, $this->getDocumentManager());
 				$c->setPropertyValue($restValue);
 			}
 		}

@@ -86,7 +86,7 @@ class Event extends AbstractSample
 			$property = $event->getDocumentModel()->getProperty($propertyName);
 			if ($property)
 			{
-				$c = new \Change\Http\Rest\PropertyConverter($event, $property, $this->getDocumentManager());
+				$c = new \Change\Http\Rest\V1\PropertyConverter($event, $property, $this->getDocumentManager());
 				$c->setPropertyValue($restValue);
 			}
 		}
@@ -128,7 +128,7 @@ class Event extends AbstractSample
 			$property = $news->getDocumentModel()->getProperty($propertyName);
 			if ($property)
 			{
-				$c = new \Change\Http\Rest\PropertyConverter($news, $property, $this->getDocumentManager());
+				$c = new \Change\Http\Rest\V1\PropertyConverter($news, $property, $this->getDocumentManager());
 				$c->setPropertyValue($restValue);
 			}
 		}
@@ -157,7 +157,7 @@ class Event extends AbstractSample
 			$property = $category->getDocumentModel()->getProperty($propertyName);
 			if ($property)
 			{
-				$c = new \Change\Http\Rest\PropertyConverter($category, $property, $this->getDocumentManager());
+				$c = new \Change\Http\Rest\V1\PropertyConverter($category, $property, $this->getDocumentManager());
 				$c->setPropertyValue($restValue);
 			}
 		}

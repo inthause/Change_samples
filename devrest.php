@@ -4,8 +4,8 @@ require_once('/vagrant' . '/Change/Application.php');
 $application = new \Change\Application();
 $application->start();
 
-$controller = new \Change\Http\Rest\Controller($application);
-$controller->setActionResolver(new \Change\Http\Rest\Resolver());
+$controller = new \Change\Http\Rest\V1\Controller($application);
+$controller->setActionResolver(new \Change\Http\Rest\V1\Resolver());
 $request = new \Change\Http\Rest\Request();
 
 $allow = $application->inDevelopmentMode();
