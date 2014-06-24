@@ -88,6 +88,8 @@ class Catalog extends AbstractSample
 			'noSidebarTemplateId' => $noSidebarTemplate->getId(), 'LCID' => 'fr_FR'
 		]);
 		$event = new \Change\Commands\Events\Event('InitializeWebsiteEvent', $this->getApplication(), $params);
+		$response = new \Change\Commands\Events\RestCommandResponse();
+		$event->setCommandResponse($response);
 
 		$popinTemplate = $this->getPageTemplate('Rbs_Common_Popin');
 		$webStore = $this->getWebStore();
