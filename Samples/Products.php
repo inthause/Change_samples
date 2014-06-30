@@ -288,11 +288,8 @@ class Products extends AbstractSample
 		$sku->save();
 		if (isset($data['level']))
 		{
-			/* @var $ie \Rbs\Stock\Documents\InventoryEntry */
-			$ie = $this->getDocumentManager()->getNewDocumentInstanceByModelName('Rbs_Stock_InventoryEntry');
-			$ie->setSku($sku);
-			$ie->setLevel($data['level']);
-			$ie->save();
+			$commerceServices = $this->getCommerceServices();
+			$commerceServices->getStockManager()->setInventory($data['level'], $sku);
 		}
 		return $sku;
 	}
@@ -355,5 +352,5 @@ class Products extends AbstractSample
 	}
 }
 
-$sample = new Catalog();
+$sample = new Products();
 $sample->install();
