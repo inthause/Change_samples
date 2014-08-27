@@ -30,13 +30,14 @@ class Simpleform extends AbstractSample
 	}
 
 	/**
+	 * @param Rbs\Simpleform\Documents\Form $form
 	 * @param array $data
-	 * @return \Rbs\Simpleform\Documents\Field
+	 * @return \Rbs\Simpleform\Documents\FormField
 	 */
-	public function addField($data)
+	public function addField(\Rbs\Simpleform\Documents\Form $form, $data)
 	{
-		/* @var $field \Rbs\Simpleform\Documents\Field */
-		$field = $this->getDocumentManager()->getNewDocumentInstanceByModelName('Rbs_Simpleform_Field');
+		$field = $form->newFormField();
+		$field->setRefLCID($form->getRefLCID());
 		foreach ($data as $propertyName => $restValue)
 		{
 			$property = $field->getDocumentModel()->getProperty($propertyName);
@@ -50,7 +51,6 @@ class Simpleform extends AbstractSample
 		{
 			$field->getCurrentLocalization()->setTitle($field->getLabel());
 		}
-		$field->save();
 		return $field;
 	}
 
@@ -63,6 +63,8 @@ class Simpleform extends AbstractSample
 	{
 		/* @var $form \Rbs\Simpleform\Documents\Form */
 		$form = $this->getDocumentManager()->getNewDocumentInstanceByModelName('Rbs_Simpleform_Form');
+		$form->setRefLCID($this->getDocumentManager()->getLCID());
+
 		foreach ($data as $propertyName => $restValue)
 		{
 			if ($propertyName == 'fields')
@@ -70,7 +72,7 @@ class Simpleform extends AbstractSample
 				$fields = $form->getFields();
 				foreach ($restValue as $fieldData)
 				{
-					$fields->add($this->addField($fieldData));
+					$fields->add($this->addField($form, $fieldData));
 				}
 				continue;
 			}
