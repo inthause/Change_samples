@@ -162,18 +162,26 @@ abstract class AbstractSample
 	 * @param string $title
 	 * @param array $content
 	 * @param boolean $hideLinks
+	 * @param boolean $updateIfExists
 	 * @return \Rbs\Website\Documents\StaticPage
 	 */
-	public function getStaticPage($section, $template, $title, $content, $hideLinks = false)
+	public function getStaticPage($section, $template, $title, $content, $hideLinks = false, $updateIfExists = false)
 	{
 		$docs = $this->getApplicationServices()->getDocumentCodeManager()->getDocumentsByCode('Page:'.$title, 'Sample');
-		if (count($docs))
+		if (count($docs) && !$updateIfExists)
 		{
 			return $docs[0];
 		}
+		elseif (count($docs))
+		{
+			$page = $docs[0];
+		}
+		else
+		{
+			$page = $this->getDocumentManager()->getNewDocumentInstanceByModelName('Rbs_Website_StaticPage');
+		}
 
 		/* @var $page \Rbs\Website\Documents\StaticPage */
-		$page = $this->getDocumentManager()->getNewDocumentInstanceByModelName('Rbs_Website_StaticPage');
 		$page->getCurrentLocalization()->setTitle($title);
 		$page->setLabel($title);
 		$page->setSection($section);
@@ -260,8 +268,9 @@ abstract class AbstractSample
 	 * @param string $filePath
 	 * @param \Rbs\Website\Documents\Website $website
 	 * @param array $replacements
+	 * @param boolean $updateIfExists
 	 */
-	public function importPageJSON($filePath, $website, $replacements = array())
+	public function importPageJSON($filePath, $website, $replacements = array(), $updateIfExists = false)
 	{
 		$this->log('Install pages...');
 		$pageJSON = str_replace('"replace:siteId"', $website->getId(), file_get_contents($filePath));
@@ -307,7 +316,7 @@ abstract class AbstractSample
 			{
 				$parent = isset($pageData['section']) ? $this->getTopic($website, $pageData['section']) : $website;
 				$hideLinks = isset($pageData['hideLinks']) ? $pageData['hideLinks'] : false;
-				$page = $this->getStaticPage($parent, $pageTemplate, $pageData['title'], $pageData['content'], $hideLinks);
+				$page = $this->getStaticPage($parent, $pageTemplate, $pageData['title'], $pageData['content'], $hideLinks, $updateIfExists);
 				if (isset($pageData['index']) && $pageData['index'] == true)
 				{
 					$this->applyFunction($parent, $page, 'Rbs_Website_Section');

@@ -1,9 +1,162 @@
 [
 	{
-		"type": "functional",
-		"title": "Résultat de recherche",
+		"title": "Résultat de recherche - produits",
 		"template": "Rbs_Demo_Nosidebarpage",
-		"content": {"mainContent":{"id":"mainContent","grid":12,"type":"container","items":[{"type":"block","name":"Rbs_Elasticsearch_Result","id":3,"label":"Rbs_Elasticsearch_Result","parameters":{"fulltextIndex":"replace:fullTextId","TTL":0}}]}},
+		"hideLinks": true,
+		"content": {
+			"mainContent": {
+				"type": "container",
+				"id": "mainContent",
+				"parameters": [],
+				"items": [
+					{
+						"type": "block",
+						"id": 3,
+						"parameters": {
+							"TTL": 60,
+							"productResultsPage": "replace:productPageId",
+							"otherResultsPage": "replace:othersPageId"
+						},
+						"name": "Rbs_Elasticsearch_ResultHeader",
+						"label": "Rbs_Elasticsearch_ResultHeader",
+						"visibility": null
+					},
+					{
+						"type": "row",
+						"id": 14,
+						"parameters": [],
+						"items": [
+							{
+								"type": "cell",
+								"id": 11,
+								"parameters": [],
+								"items": [
+									{
+										"type": "block",
+										"id": 15,
+										"parameters": {
+											"TTL": 0,
+											"toDisplayDocumentId": 0,
+											"requiredSearchText": true,
+											"useCurrentSectionProductList": false,
+											"showUnavailable": true,
+											"facets": ["replace:facetIds"]
+										},
+										"name": "Rbs_Elasticsearch_StoreFacets",
+										"label": "Rbs_Elasticsearch_StoreFacets",
+										"visibility": null
+									}
+								],
+								"size": 3
+							},
+							{
+								"type": "cell",
+								"id": 12,
+								"parameters": [],
+								"items": [
+									{
+										"type": "block",
+										"id": 6,
+										"parameters": {
+											"TTL": 60,
+											"requiredSearchText": true,
+											"useCurrentSectionProductList": false,
+											"showUnavailable": true,
+											"contextualUrls": false,
+											"itemsPerLine": 3,
+											"itemsPerPage": 9,
+											"showOrdering": true
+										},
+										"name": "Rbs_Elasticsearch_StoreResult",
+										"label": "Rbs_Elasticsearch_StoreResult",
+										"visibility": null
+									}
+								],
+								"size": 9
+							}
+						],
+						"grid": 12
+					}
+				],
+				"grid": 12
+			}
+		},
+		"function": "Rbs_Elasticsearch_Result"
+	},
+	{
+		"title": "Résultat de recherche - autres contenus",
+		"template": "Rbs_Demo_Nosidebarpage",
+		"hideLinks": true,
+		"content": {
+			"mainContent": {
+				"type": "container",
+				"id": "mainContent",
+				"parameters": [],
+				"items": [
+					{
+						"type": "block",
+						"id": 3,
+						"parameters": {
+							"TTL": 60,
+							"productResultsPage": "replace:productPageId",
+							"otherResultsPage": "replace:othersPageId"
+						},
+						"name": "Rbs_Elasticsearch_ResultHeader",
+						"label": "Rbs_Elasticsearch_ResultHeader",
+						"visibility": null
+					},
+					{
+						"type": "row",
+						"id": 21,
+						"parameters": [],
+						"items": [
+							{
+								"type": "cell",
+								"id": 18,
+								"parameters": [],
+								"items": [
+									{
+										"type": "block",
+										"id": 22,
+										"parameters": {
+											"TTL": 0,
+											"excludeProducts": true
+										},
+										"name": "Rbs_Elasticsearch_Facets",
+										"label": "Rbs_Elasticsearch_Facets",
+										"visibility": null
+									}
+								],
+								"size": 3
+							},
+							{
+								"type": "cell",
+								"id": 19,
+								"parameters": [],
+								"items": [
+									{
+										"type": "block",
+										"id": 6,
+										"parameters": {
+											"TTL": 0,
+											"itemsPerPage": 20,
+											"showModelFacet": true,
+											"excludeProducts": true
+										},
+										"name": "Rbs_Elasticsearch_Result",
+										"label": "Rbs_Elasticsearch_Result",
+										"visibility": null
+									}
+								],
+								"size": 9
+							}
+						],
+						"grid": 12
+					}
+				],
+				"grid": 12
+			}
+		},
 		"function": "Rbs_Elasticsearch_Result"
 	}
 ]

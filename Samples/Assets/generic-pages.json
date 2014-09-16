@@ -1,0 +1,44 @@
+[
+	{
+		"title": "Politique de Confidentialité et Protection de la Vie Privée",
+		"template": "Rbs_Demo_Nosidebarpage",
+		"content": {
+			"mainContent": {
+				"type": "container",
+				"id": "mainContent",
+				"parameters": {},
+				"items": [
+					{
+						"type": "block",
+						"id": 4,
+						"parameters": {
+							"TTL": 60,
+							"content": {
+								"e": "Html",
+								"t": "<h1>Politique de Confidentialité et Protection de la Vie Privée</h1>",
+								"h": null
+							}
+						},
+						"name": "Rbs_Website_Richtext",
+						"label": "Rbs_Website_Richtext",
+						"visibility": null
+					},
+					{
+						"type": "block",
+						"id": 6,
+						"parameters": {
+							"TTL": 60,
+							"notChosenText": "Vous n'avez pas encore choisi d'accepter ou refuser les cookies et traceurs.",
+							"allowedText": "Vous avez choisi d'accepter les cookies et traceurs.",
+							"notAllowedText": "Vous avez choisi de refuser les cookies et traceurs."
+						},
+						"name": "Rbs_Website_TrackersManage",
+						"label": "Rbs_Website_TrackersManage",
+						"visibility": null
+					}
+				],
+				"grid": 12
+			}
+		}
+	}
+]

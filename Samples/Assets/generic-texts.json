@@ -1,0 +1,29 @@
+[
+	{
+		"label": "Bannière d'acceptation des cookies et traceurs",
+		"title": "Bannière d'acceptation des cookies et traceurs",
+		"text": {
+			"e": "Markdown",
+			"t": "En poursuivant votre navigation sur ce site, vous acceptez l'utilisation de cookies pour vous proposer des services et offres adaptés à vos centres d’intérêts.\n\nPour en savoir plus et paramétrer les cookies, consultez notre [Politique de Confidentialité et Protection de la Vie Privée](replace:manageTrackersPageId \"Politique de Confidentialité et Protection de la Vie Privée\").",
+			"h": null
+		}
+	},
+	{
+		"label": "Confirmation d'opt out (cookies et traceurs)",
+		"title": "Confirmation d'opt out (cookies et traceurs)",
+		"text": {
+			"e": "Markdown",
+			"t": "Vous vous êtes opposé au dépôt de cookies de mesures d'audience dans votre navigateur.",
+			"h": null
+		}
+	},
+	{
+		"label": "Confirmation d'opt in (cookies et traceurs)",
+		"title": "Confirmation d'opt in (cookies et traceurs)",
+		"text": {
+			"e": "Markdown",
+			"t": "Vous avez autorisé le dépôt de cookies de mesures d'audience dans votre navigateur.",
+			"h": null
+		}
+	}
+]

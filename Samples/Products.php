@@ -375,7 +375,7 @@ class Products extends AbstractSample
 	 */
 	public function addFacetStaticProductListPage($section, $template, $productList)
 	{
-		$str = '{"sidebarContent":{"id":"sidebarContent","grid":3,"type":"container","items":[{"type":"block","name":"Rbs_Elasticsearch_Facets","id":9,"label":"Rbs_Elasticsearch_Facets","parameters":{"TTL":0,"toDisplayDocumentId":XXXXXX,"useCurrentSectionProductList":false,"showUnavailable":true,"facets":[]}}]},"mainContent":{"id":"mainContent","grid":12,"type":"container","items":[{"type":"block","name":"Rbs_Elasticsearch_StoreResult","id":11,"label":"Rbs_Elasticsearch_StoreResult","parameters":{"TTL":60,"toDisplayDocumentId":XXXXXX,"useCurrentSectionProductList":false,"showUnavailable":true,"contextualUrls":true,"itemsPerLine":3,"itemsPerPage":9,"showOrdering":true}}]}}';
+		$str = '{"sidebarContent":{"id":"sidebarContent","grid":3,"type":"container","items":[{"type":"block","name":"Rbs_Elasticsearch_StoreFacets","id":9,"label":"Rbs_Elasticsearch_StoreFacets","parameters":{"TTL":0,"toDisplayDocumentId":XXXXXX,"useCurrentSectionProductList":false,"showUnavailable":true,"facets":[]}}]},"mainContent":{"id":"mainContent","grid":12,"type":"container","items":[{"type":"block","name":"Rbs_Elasticsearch_StoreResult","id":11,"label":"Rbs_Elasticsearch_StoreResult","parameters":{"TTL":60,"toDisplayDocumentId":XXXXXX,"useCurrentSectionProductList":false,"showUnavailable":true,"contextualUrls":true,"itemsPerLine":3,"itemsPerPage":9,"showOrdering":true}}]}}';
 		$content = json_decode(str_replace('XXXXXX', $productList->getId(), $str), true);
 		$page = $this->getStaticPage($section, $template, $productList->getLabel(), $content);
 		$this->setSectionPageFunction($section, $page, 'Rbs_Website_Section');

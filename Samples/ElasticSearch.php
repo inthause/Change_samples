@@ -5,6 +5,11 @@ require_once __DIR__ . '/AbstractSample.php';
 
 class ElasticSearch extends AbstractSample
 {
+	/**
+	 * @var \Rbs\Elasticsearch\Documents\Facet[]
+	 */
+	protected $facets = [];
+
 	public function install()
 	{
 		$this->registerServices();
@@ -15,13 +20,32 @@ class ElasticSearch extends AbstractSample
 		$website = $this->getDefaultWebsite();
 		$fullText = $this->getFullText($website);
 		echo $fullText, ' ', $fullText->getName(), PHP_EOL;
-		$this->importPageJSON(__DIR__ . '/Assets/elasticsearch-pages.json', $website, array('fullTextId' => $fullText->getId()));
+		$pageParams = array(
+			'fullTextId' => $fullText->getId(),
+			'facetIds' => 0,
+			'productPageId' => 0,
+			'othersPageId' => 0
+		);
+		$this->importPageJSON(__DIR__ . '/Assets/elasticsearch-pages.json', $website, $pageParams);
 
 		$storeIndex = $this->getStoreIndex($website);
 		if ($storeIndex)
 		{
 			echo $storeIndex, ' ', $storeIndex->getName(), PHP_EOL;
-			//$this->importPageJSON(__DIR__ . '/Assets/elasticsearch-pages.json', $website, array('fullTextId' => $fullText->getId()));
+
+			$productPage = $this->getApplicationServices()->getDocumentCodeManager()->getDocumentsByCode('Page:Résultat de recherche - produits', 'Sample');
+			$othersPage = $this->getApplicationServices()->getDocumentCodeManager()->getDocumentsByCode('Page:Résultat de recherche - autres contenus', 'Sample');
+			$facetIds = [];
+			$facets = $this->getApplicationServices()->getDocumentCodeManager()->getDocumentsByCode('Facet:all', 'Sample');
+			foreach ($facets as $facet)
+			{
+				$facetIds[] = $facet->getId();
+			}
+
+			$pageParams['facetIds'] = implode(',', $facetIds);
+			$pageParams['productPageId'] = $productPage[0]->getId();
+			$pageParams['othersPageId'] = $othersPage[0]->getId();
+			$this->importPageJSON(__DIR__ . '/Assets/elasticsearch-pages.json', $website, $pageParams, true);
 		}
 		$transactionManager->commit();
 	}
@@ -92,6 +116,7 @@ class ElasticSearch extends AbstractSample
 			$facet->getCurrentLocalization()->setTitle('Prix');
 			$facet->setConfigurationType('Price');
 			$facet->save();
+			$this->getApplicationServices()->getDocumentCodeManager()->addDocumentCode($facet, 'Facet:all', 'Sample');
 
 			/** @var $attribute \Rbs\Catalog\Documents\Attribute */
 			foreach ($attributes as $attribute)
@@ -105,6 +130,7 @@ class ElasticSearch extends AbstractSample
 					$facet->setConfigurationType('Attribute');
 					$facet->getParameters()->set('attributeId', $attribute->getId());
 					$facet->save();
+					$this->getApplicationServices()->getDocumentCodeManager()->addDocumentCode($facet, 'Facet:all', 'Sample');
 				}
 			}
 
@@ -114,6 +140,7 @@ class ElasticSearch extends AbstractSample
 			$facet->getCurrentLocalization()->setTitle('Disponibilité');
 			$facet->setConfigurationType('SkuThreshold');
 			$facet->save();
+			$this->getApplicationServices()->getDocumentCodeManager()->addDocumentCode($facet, 'Facet:all', 'Sample');
 			return $storeIndex;
 		}
 		return null;
