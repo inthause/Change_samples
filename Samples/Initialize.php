@@ -26,6 +26,27 @@ class Initialize extends AbstractSample
 		$event->setCommandResponse($response);
 		$initializeWebsite = new \Rbs\Generic\Commands\InitializeWebsite();
 		$initializeWebsite->execute($event);
+
+		$context = 'Rbs Generic Website Initialize ' . $website->getId();
+		$userAccountTopics = $this->getApplicationServices()->getDocumentCodeManager()->getDocumentsByCode('rbs_generic_initialize_user_account_topic', $context);
+		if (isset($userAccountTopics[0]) && $userAccountTopics[0] instanceof \Rbs\Website\Documents\Section)
+		{
+			/* @var $userAccountTopic \Rbs\Website\Documents\Section */
+			$userAccountTopic = $userAccountTopics[0];
+			if (!count($userAccountTopic->getAuthorizedGroups()))
+			{
+				$query = $this->getApplicationServices()->getDocumentManager()->getNewQuery('Rbs_User_Group');
+				$groups = $query->andPredicates($query->eq('realm', 'web'))->getDocuments();
+				if (count($groups))
+				{
+					$transactionManager->begin();
+					$userAccountTopic->setAuthorizedGroups($groups->toArray());
+					$userAccountTopic->update();
+					$transactionManager->commit();
+				}
+			}
+
+		}
 	}
 
 	/**
