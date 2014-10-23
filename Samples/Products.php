@@ -120,15 +120,7 @@ class Products extends AbstractSample
 			$productList->setSynchronizedSection($topic);
 			$productList->save();
 
-			if (count($facets))
-			{
-				$this->addFacetStaticProductListPage($topic, $templateSideBar, $productList);
-
-			}
-			else
-			{
-				$this->addStaticProductListPage($topic, $template, $productList);
-			}
+			$this->addProductListPage($topic, $template);
 
 			/* @var $product \Rbs\Catalog\Documents\Product */
 			foreach ($productCodes as $productCode)
@@ -355,29 +347,12 @@ class Products extends AbstractSample
 	/**
 	 * @param \Rbs\Website\Documents\Section $section
 	 * @param \Rbs\Theme\Documents\Template $template
-	 * @param \Rbs\Catalog\Documents\ProductList $productList
 	 * @return \Rbs\Website\Documents\FunctionalPage
 	 */
-	public function addStaticProductListPage($section, $template, $productList)
-	{
-		$content = json_decode('{"mainContent":{"id":"mainContent","grid":12,"type":"container","items":[{"type":"block","name":"Rbs_Catalog_ProductList","id":6,"label":"Rbs_Catalog_ProductList","parameters":{"toDisplayDocumentId":'
-			. $productList->getId() . '}}]}}', true);
-		$page = $this->getStaticPage($section, $template, $productList->getLabel(), $content);
-		$this->setSectionPageFunction($section, $page, 'Rbs_Website_Section');
-		return $page;
-	}
+	public function addProductListPage($section, $template) {
 
-	/**
-	 * @param \Rbs\Website\Documents\Section $section
-	 * @param \Rbs\Theme\Documents\Template $template
-	 * @param \Rbs\Catalog\Documents\ProductList $productList
-	 * @return \Rbs\Website\Documents\FunctionalPage
-	 */
-	public function addFacetStaticProductListPage($section, $template, $productList)
-	{
-		$str = '{"sidebarContent":{"id":"sidebarContent","grid":3,"type":"container","items":[{"type":"block","name":"Rbs_Elasticsearch_StoreFacets","id":9,"label":"Rbs_Elasticsearch_StoreFacets","parameters":{"TTL":0,"toDisplayDocumentId":XXXXXX,"useCurrentSectionProductList":false,"showUnavailable":true,"facets":[]}}]},"mainContent":{"id":"mainContent","grid":12,"type":"container","items":[{"type":"block","name":"Rbs_Elasticsearch_StoreResult","id":11,"label":"Rbs_Elasticsearch_StoreResult","parameters":{"TTL":60,"toDisplayDocumentId":XXXXXX,"useCurrentSectionProductList":false,"showUnavailable":true,"contextualUrls":true,"itemsPerLine":3,"itemsPerPage":9,"showOrdering":true}}]}}';
-		$content = json_decode(str_replace('XXXXXX', $productList->getId(), $str), true);
-		$page = $this->getStaticPage($section, $template, $productList->getLabel(), $content);
+		$content = json_decode('{"sidebarContent":{"type":"container","id":"sidebarContent","parameters":[],"items":[{"type":"block","id":3,"parameters":{"TTL":0,"useCurrentSectionProductList":true,"searchMode":false,"showUnavailable":true},"name":"Rbs_Elasticsearch_StoreFacets","label":"Rbs_Elasticsearch_StoreFacets","visibility":null}],"grid":12},"mainContent":{"type":"container","id":"mainContent","parameters":[],"items":[{"type":"block","id":4,"parameters":{"TTL":60,"useCurrentSectionProductList":true,"contextualUrls":true,"itemsPerLine":3,"itemsPerPage":9,"showOrdering":true,"showUnavailable":true},"name":"Rbs_Catalog_ProductList","label":"Rbs_Catalog_ProductList","visibility":null}],"grid":12}}');
+		$page = $this->getFunctionalPage($section->getWebsite(), $template, 'Liste de produits', $content);
 		$this->setSectionPageFunction($section, $page, 'Rbs_Website_Section');
 		return $page;
 	}

@@ -29,6 +29,7 @@ class Catalog extends AbstractSample
 			/* @var $billingArea \Rbs\Price\Documents\BillingArea */
 			$billingArea = $this->getDocumentManager()->getNewDocumentInstanceByModelName('Rbs_Price_BillingArea');
 			$billingArea->setLabel('Sample FR Billing Area');
+			$billingArea->getCurrentLocalization()->setTitle('Euro');
 			$billingArea->setCurrencyCode('EUR');
 			$billingArea->setTaxes(array($this->getTaxByeCode('TVAFR')));
 			$billingArea->save();
@@ -49,8 +50,11 @@ class Catalog extends AbstractSample
 			/* @var $webStore \Rbs\Store\Documents\WebStore */
 			$webStore = $this->getDocumentManager()->getNewDocumentInstanceByModelName('Rbs_Store_WebStore');
 			$webStore->setLabel('Sample Web Store');
+			$webStore->getCurrentLocalization()->setTitle('Boutique de démonstration');
 			$webStore->setBillingAreas(array($this->getBillingArea()));
-			$webStore->setPricesValueWithTax(true);
+			$webStore->setDisplayPricesWithoutTax(true);
+			$webStore->setDisplayPricesWithTax(true);
+			$webStore->setPricesValueWithTax(false);
 			$webStore->save();
 		}
 		return $webStore;
