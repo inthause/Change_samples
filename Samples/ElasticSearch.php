@@ -73,6 +73,7 @@ class ElasticSearch extends AbstractSample
 		$fullText = $this->getDocumentManager()->getNewDocumentInstanceByModelName('Rbs_Elasticsearch_FullText');
 		$fullText->setClientName($im->getClientsName()[0]);
 		$fullText->setWebsite($website);
+		$fullText->setName('fulltext_sample_fr_fr');
 		$fullText->setAnalysisLCID($this->getDocumentManager()->getLCID());
 		$fullText->create();
 
@@ -106,6 +107,7 @@ class ElasticSearch extends AbstractSample
 			$storeIndex = $this->getDocumentManager()->getNewDocumentInstanceByModelName('Rbs_Elasticsearch_StoreIndex');
 			$storeIndex->setClientName($im->getClientsName()[0]);
 			$storeIndex->setWebsite($website);
+			$storeIndex->setName('store_sample_fr_fr');
 			$storeIndex->setAnalysisLCID($this->getDocumentManager()->getLCID());
 			$storeIndex->create();
 			$this->getApplicationServices()->getDocumentCodeManager()->addDocumentCode($storeIndex, 'Store:default', 'Sample');

@@ -120,7 +120,7 @@ class Products extends AbstractSample
 			$productList->setSynchronizedSection($topic);
 			$productList->save();
 
-			$this->addProductListPage($topic, $template);
+			$this->addProductListPage($topic, $templateSideBar);
 
 			/* @var $product \Rbs\Catalog\Documents\Product */
 			foreach ($productCodes as $productCode)
