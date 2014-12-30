@@ -18,6 +18,8 @@ class RbsStorelocatorSample
 		/** @var \Rbs\Storelocator\StorelocatorServices $storelocatorServices */
 		$storelocatorServices = $event->getServices('Rbs_StorelocatorServices');
 
+
+
 		/** @var \Rbs\Generic\GenericServices $genericServices */
 		$genericServices = $event->getServices('genericServices');
 
@@ -32,7 +34,6 @@ class RbsStorelocatorSample
 		$query = $documentManager->getNewQuery('Rbs_Website_Website');
 		$query->addOrder('id');
 		$website = $query->getFirstDocument();
-
 		echo 'Published in ', $website, PHP_EOL;
 
 		$addressFields = $applicationServices->getDocumentCodeManager()->getDocumentsByCode('AddressFields', 'Rbs_Storelocator_Setup');
@@ -43,6 +44,14 @@ class RbsStorelocatorSample
 
 		$tm = $event->getApplicationServices()->getTransactionManager();
 		$tm->begin();
+
+		$this->addFacet($LCID);
+
+		$storeLocatorIndex  = $this->addStoreLocatorIndex($website, $LCID);
+
+		$indexManager = $genericServices->getIndexManager();
+		$indexManager->deleteIndex($storeLocatorIndex);
+		$indexManager->createIndex($storeLocatorIndex);
 
 		foreach ($storesRawData as $row)
 		{
@@ -104,15 +113,85 @@ class RbsStorelocatorSample
 
 			$store->save();
 
-			if ($website) {
-				$this->publishStore($store, 'PUBLISHABLE');
-			}
-
 			echo $store, ' ', $store->getCode(), ' ', $store->getLabel(), PHP_EOL;
 		}
+
 		$tm->commit();
 	}
 
+	/**
+	 * @param $website
+	 * @param $LCID
+	 * @return \Rbs\Storelocator\Documents\StoreLocatorIndex
+	 */
+	public function addStoreLocatorIndex($website, $LCID)
+	{
+		$documentManager = $this->getDocumentManager();
+		$query = $documentManager->getNewQuery('Rbs_Storelocator_StoreLocatorIndex');
+		$query->andPredicates($query->eq('website', $website), $query->eq('analysisLCID', $LCID));
+
+		$storeLocatorIndex = $query->getFirstDocument();
+		if (!$storeLocatorIndex) {
+
+			/** @var \Rbs\Storelocator\Documents\StoreLocatorIndex $storeLocatorIndex */
+			$storeLocatorIndex = $documentManager->getNewDocumentInstanceByModelName('Rbs_Storelocator_StoreLocatorIndex');
+
+			$storeLocatorIndex->setAnalysisLCID($LCID);
+			$storeLocatorIndex->setWebsite($website);
+
+			$storeLocatorIndex->setName('storelocator_sample_fr_fr');
+			$storeLocatorIndex->setCategory('storeLocator');
+			$storeLocatorIndex->setClientName('front');
+			$storeLocatorIndex->save();
+		}
+		return $storeLocatorIndex;
+	}
+
+	public function addFacet($LCID)
+	{
+		$documentManager = $this->getDocumentManager();
+		$query = $documentManager->getNewQuery('Rbs_Elasticsearch_Facet');
+		$query->andPredicates($query->eq('indexCategory', 'storeLocator'), $query->eq('label', 'Départements'));
+
+		$facet = $query->getFirstDocument();
+		if (!$facet) {
+			/** @var \Rbs\Elasticsearch\Documents\Facet $facet */
+			$facet = $documentManager->getNewDocumentInstanceByModelName('Rbs_Elasticsearch_Facet');
+			$facet->setLabel('Départements');
+			$facet->setRefLCID($LCID);
+			$facet->getRefLocalization()->setTitle('Départements');
+			$facet->setIndexCategory('indexCategory');
+			$facet->setConfigurationType('StorelocatorTerritorialUnit');
+			$facet->setParameters([
+				'unitType' => 'DEPARTEMENT',
+				'multipleChoice' => false,
+				'showEmptyItem' => false
+			]);
+
+			$facet->save();
+		}
+
+		$query = $documentManager->getNewQuery('Rbs_Elasticsearch_Facet');
+		$query->andPredicates($query->eq('indexCategory', 'storeLocator'), $query->eq('label', 'Régions'));
+
+		$facetRegion = $query->getFirstDocument();
+		if (!$facetRegion) {
+			/** @var \Rbs\Elasticsearch\Documents\Facet $facetRegion */
+			$facetRegion = $documentManager->getNewDocumentInstanceByModelName('Rbs_Elasticsearch_Facet');
+			$facetRegion->setLabel('Régions');
+			$facetRegion->setRefLCID($LCID);
+			$facetRegion->getRefLocalization()->setTitle('Régions');
+			$facetRegion->setIndexCategory('indexCategory');
+			$facetRegion->setConfigurationType('StorelocatorTerritorialUnit');
+			$facetRegion->setParameters([
+				'unitType' => 'REGION',
+				'multipleChoice' => false,
+				'showEmptyItem' => false
+			]);
+			$facetRegion->setFacets([$facet]);
+			$facetRegion->save();
+		}
+	}
 	/**
 	 * @param string $zipCode
 	 * @return \Rbs\Geo\Documents\TerritorialUnit | null;
@@ -167,11 +246,6 @@ class RbsStorelocatorSample
 	}
 
 	/**
-	 * @var string[]
-	 */
-	protected $publicationTaskCodes = ['requestValidation', 'contentValidation', 'publicationValidation'];
-
-	/**
 	 * @var \Change\Documents\DocumentManager
 	 */
 	protected $documentManager;
@@ -182,60 +256,6 @@ class RbsStorelocatorSample
 	protected function getDocumentManager()
 	{
 		return $this->documentManager;
-	}
-
-	/**
-	 * @param \Rbs\Storelocator\Documents\Store $store
-	 * @param string $publicationStatus
-	 */
-	public function publishStore(\Rbs\Storelocator\Documents\Store $store, $publicationStatus)
-	{
-		$LCID = $store->getCurrentLCID();
-		$currentStatus = $store->getCurrentLocalization()->getPublicationStatus();
-
-		if ($currentStatus  == \Change\Documents\Interfaces\Publishable::STATUS_DRAFT &&
-			$publicationStatus == \Change\Documents\Interfaces\Publishable::STATUS_PUBLISHABLE)
-		{
-			$this->executePublicationTask($store, $LCID, $this->publicationTaskCodes);
-		}
-		else if ($currentStatus  == \Change\Documents\Interfaces\Publishable::STATUS_FROZEN &&
-			$publicationStatus == \Change\Documents\Interfaces\Publishable::STATUS_PUBLISHABLE)
-		{
-			$this->executePublicationTask($store, $LCID, ['unfreeze']);
-		}
-		else if ($currentStatus  == \Change\Documents\Interfaces\Publishable::STATUS_PUBLISHABLE &&
-			$publicationStatus == \Change\Documents\Interfaces\Publishable::STATUS_FROZEN)
-		{
-			$this->executePublicationTask($store, $LCID, ['freeze']);
-		}
-	}
-
-	/**
-	 * @param \Change\Documents\AbstractDocument $document
-	 * @param string $LCID
-	 * @param array $publicationTaskCodes
-	 */
-	protected function executePublicationTask(\Change\Documents\AbstractDocument $document, $LCID, array $publicationTaskCodes)
-	{
-		$query = $this->getDocumentManager()->getNewQuery('Rbs_Workflow_Task');
-
-		$query->andPredicates(
-			$query->in('taskCode', $publicationTaskCodes),
-			$query->eq('document', $document),
-			$query->eq('documentLCID', $LCID),
-			$query->eq('status', \Change\Workflow\Interfaces\WorkItem::STATUS_ENABLED));
-
-		$task = $query->getFirstDocument();
-		if ($task instanceof \Rbs\Workflow\Documents\Task)
-		{
-			$userId = 0;
-			$context = [];
-			$workflowInstance = $task->execute($context, $userId);
-			if ($workflowInstance)
-			{
-				$this->executePublicationTask($document, $LCID, $publicationTaskCodes);
-			}
-		}
 	}
 }
 
