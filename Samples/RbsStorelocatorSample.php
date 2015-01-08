@@ -50,7 +50,14 @@ class RbsStorelocatorSample
 		$storeLocatorIndex  = $this->addStoreLocatorIndex($website, $LCID);
 
 		$indexManager = $genericServices->getIndexManager();
-		$indexManager->deleteIndex($storeLocatorIndex);
+		try {
+			$indexManager->deleteIndex($storeLocatorIndex);
+		}
+		catch (\Elastica\Exception\ResponseException $e)
+		{
+			echo 'New index ', $storeLocatorIndex->getName(), PHP_EOL;
+		}
+
 		$indexManager->createIndex($storeLocatorIndex);
 
 		foreach ($storesRawData as $row)
