@@ -80,8 +80,8 @@ class Products extends AbstractSample
 		$cm = $commerceServices->getCatalogManager();
 		$commerceWebStoreInitializationContext = 'Rbs Commerce WebStore Initialize ' . $this->getDefaultWebsite()->getId() . ' ' . $webStore->getId();
 		$shopTopics = $this->getApplicationServices()->getDocumentCodeManager()->getDocumentsByCode('rbs_commerce_initialize_store_topic', $commerceWebStoreInitializationContext);
-		$template = $this->getPageTemplate('Rbs_Demo_Nosidebarpage');
-		$templateSideBar = $this->getPageTemplate('Rbs_Demo_Sidebarpage');
+		$template = $this->getPageTemplate('Rbs_Blank_NoSidebarPage');
+		$templateSideBar = $this->getPageTemplate('Rbs_Blank_SidebarPage');
 		if (isset($shopTopics[0]) && $shopTopics[0] != null)
 		{
 			$shopTopic = $shopTopics[0];

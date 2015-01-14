@@ -1,7 +1,7 @@
 [
 	{
 		"title": "Résultat de recherche - produits",
-		"template": "Rbs_Demo_Nosidebarpage",
+		"template": "Rbs_Blank_NoSidebarPage",
 		"hideLinks": true,
 		"content": {
 			"mainContent": {
@@ -85,7 +85,7 @@
 	},
 	{
 		"title": "Résultat de recherche - autres contenus",
-		"template": "Rbs_Demo_Nosidebarpage",
+		"template": "Rbs_Blank_NoSidebarPage",
 		"hideLinks": true,
 		"content": {
 			"mainContent": {

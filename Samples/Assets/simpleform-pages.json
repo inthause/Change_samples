@@ -1,9 +1,0 @@
-[
-	{
-		"type": "functional",
-		"title": "Formulaire",
-		"template": "Rbs_Demo_Nosidebarpage",
-		"content": {"mainContent":{"id":"mainContent","grid":12,"gridMode":"fluid","type":"container","items":[{"type":"block","name":"Rbs_Simpleform_Form","id":3,"label":"Rbs_Simpleform_Form","parameters":{}}]}},
-		"function": "Rbs_Simpleform_Form"
-	}
-]

@@ -2,33 +2,33 @@
 	{
 		"title" : "Actualités et événements du site",
 		"section": "Actualités 2",
-		"template": "Rbs_Demo_Sidebarpage",
+		"template": "Rbs_Blank_SidebarPage",
 		"content" : {"mainContent":{"id":"mainContent","grid":12,"gridMode":"fluid","type":"container","items":[{"type":"block","name":"Rbs_Event_ContextualList","id":3,"label":"Rbs_Event_ContextualList","parameters":{"sectionId":"replace:siteId"}}]}}
 	},
 	{
 		"title" : "Calendrier du site",
 		"section": "Actualités 2",
-		"template": "Rbs_Demo_Sidebarpage",
+		"template": "Rbs_Blank_SidebarPage",
 		"content" : {"mainContent":{"id":"mainContent","grid":12,"gridMode":"fluid","type":"container","items":[{"type":"block","name":"Rbs_Event_Calendar","id":3,"label":"Rbs_Event_Calendar","parameters":{"sectionId":"replace:siteId"}}]}}
 	},
 	{
 		"type": "functional",
 		"title": "Événement",
-		"template": "Rbs_Demo_Sidebarpage",
+		"template": "Rbs_Blank_SidebarPage",
 		"content": {"mainContent":{"id":"mainContent","grid":12,"gridMode":"fluid","type":"container","items":[{"type":"block","name":"Rbs_Event_Event","id":3,"label":"Rbs_Event_Event","parameters":{"showTime":true,"showCategories":true,"contextualUrls":true,"templateName":"event.twig"}}]}},
 		"function": "Rbs_Event_Event"
 	},
 	{
 		"type": "functional",
 		"title": "Actualité",
-		"template": "Rbs_Demo_Sidebarpage",
+		"template": "Rbs_Blank_SidebarPage",
 		"content": {"mainContent":{"id":"mainContent","grid":12,"gridMode":"fluid","type":"container","items":[{"type":"block","name":"Rbs_Event_News","id":3,"label":"Rbs_Event_News","parameters":{"showTime":true,"showCategories":true,"contextualUrls":true,"templateName":"news.twig"}}]}},
 		"function": "Rbs_Event_News"
 	},
 	{
 		"type": "functional",
 		"title": "Catégorie",
-		"template": "Rbs_Demo_Sidebarpage",
+		"template": "Rbs_Blank_SidebarPage",
 		"content": {"mainContent":{"id":"mainContent","grid":12,"gridMode":"fluid","type":"container","items":[{"type":"block","name":"Rbs_Event_Category","id":3,"label":"Rbs_Event_Category","parameters":{"showTime":true,"showCategories":true,"contextualUrls":true,"contextualCategoryUrls":false,"sectionRestriction":"website"}}]}},
 		"function": "Rbs_Event_Category"
 	},
@@ -36,7 +36,7 @@
 		"type": "functional",
 		"title": "Liste des actualités et événements",
 		"section": ["Actualités et événements", "Actualités", "Événements", "Actualités 2"],
-		"template": "Rbs_Demo_Sidebarpage",
+		"template": "Rbs_Blank_SidebarPage",
 		"content": {"mainContent":{"id":"mainContent","grid":12,"gridMode":"fluid","type":"container","items":[{"type":"block","name":"Rbs_Event_ContextualList","id":3,"label":"Rbs_Event_ContextualList","parameters":[]}]}}
 	}
 ]

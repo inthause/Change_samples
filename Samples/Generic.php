@@ -82,11 +82,11 @@ class Generic extends AbstractSample
 		$docs = $this->getApplicationServices()->getDocumentCodeManager()->getDocumentsByCode('Text:Confirmation d\'opt in (cookies et traceurs)', 'Sample');
 		$params['optInConfirmationText'] = $docs[0]->getId();
 
-		$this->log(' - Rbs_Demo_Nosidebarpage');
-		$noSidebarTemplate = $this->getPageTemplate('Rbs_Demo_Nosidebarpage');
+		$this->log(' - Rbs_Blank_NoSidebarPage');
+		$noSidebarTemplate = $this->getPageTemplate('Rbs_Blank_NoSidebarPage');
 		$this->updateTemplate($noSidebarTemplate, $params);
-		$this->log(' - Rbs_Demo_Sidebarpage');
-		$sidebarTemplate = $this->getPageTemplate('Rbs_Demo_Sidebarpage');
+		$this->log(' - Rbs_Blank_SidebarPage');
+		$sidebarTemplate = $this->getPageTemplate('Rbs_Blank_SidebarPage');
 		$this->updateTemplate($sidebarTemplate, $params);
 
 		$transactionManager = $this->getApplicationServices()->getTransactionManager();

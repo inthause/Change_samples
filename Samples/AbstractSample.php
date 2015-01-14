@@ -122,7 +122,7 @@ abstract class AbstractSample
 	 * @param string $code
 	 * @return \Rbs\Theme\Documents\Template
 	 */
-	protected function getPageTemplate($code = 'Rbs_Demo_Sidebarpage')
+	protected function getPageTemplate($code = 'Rbs_Blank_SidebarPage')
 	{
 		if (!isset($this->pageTemplates[$code]))
 		{

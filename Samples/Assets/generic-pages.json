@@ -1,7 +1,7 @@
 [
 	{
 		"title": "Politique de Confidentialité et Protection de la Vie Privée",
-		"template": "Rbs_Demo_Nosidebarpage",
+		"template": "Rbs_Blank_NoSidebarPage",
 		"content": {
 			"mainContent": {
 				"type": "container",

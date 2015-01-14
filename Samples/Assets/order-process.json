@@ -1,0 +1,57 @@
+{
+	"documents": [
+		{
+			"_id": "rbs_commerce_initialize_shipping_mode_ups",
+			"_model": "Rbs_Shipping_Mode",
+			"label": {"_i18n": "m.rbs.commerce.initialize.shipping_mode_ups"},
+			"code": "UPS",
+			"_LCID": {
+				"fr_FR": {
+					"title": {"_i18n": "m.rbs.commerce.initialize.shipping_mode_ups"}
+				},
+				"en_US": {
+					"title": {"_i18n": "m.rbs.commerce.initialize.shipping_mode_ups"}
+				}
+			}
+		},
+		{
+			"_id": "rbs_commerce_initialize_shipping_mode_tnt",
+			"_model": "Rbs_Shipping_Mode",
+			"label": {"_i18n": "m.rbs.commerce.initialize.shipping_mode_tnt"},
+			"code": "TNT",
+			"_LCID": {
+				"fr_FR": {
+					"title": {"_i18n": "m.rbs.commerce.initialize.shipping_mode_tnt"}
+				},
+				"en_US": {
+					"title": {"_i18n": "m.rbs.commerce.initialize.shipping_mode_tnt"}
+				}
+			}
+		},
+		{
+			"_id": "rbs_commerce_initialize_payment_cheque",
+			"_model": "Rbs_Payment_DeferredConnector",
+			"label": {"_i18n": "m.rbs.commerce.initialize.payment_cheque"},
+			"code": "CHQ",
+			"_LCID": {
+				"fr_FR": {
+					"title": "Chèque"
+				},
+				"en_US": {
+					"title": "Cheque"
+				}
+			}
+		},
+		{
+			"_id": "rbs_commerce_initialize_order_process",
+			"_model": "Rbs_Commerce_Process",
+			"label": {"_i18n": "m.rbs.commerce.initialize.order_process"},
+			"paymentConnectors": [{"_id": "rbs_commerce_initialize_payment_cheque"}],
+			"shippingModes": [
+				{"_id": "rbs_commerce_initialize_shipping_mode_ups"},
+				{"_id": "rbs_commerce_initialize_shipping_mode_tnt"}
+			]
+		}
+	],
+	"contextId": "Sample"
+}

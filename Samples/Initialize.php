@@ -12,13 +12,14 @@ class Initialize extends AbstractSample
 		$transactionManager = $this->getApplicationServices()->getTransactionManager();
 		$transactionManager->begin();
 		$website = $this->getDefaultWebsite();
-		$sidebarTemplate = $this->getPageTemplate('Rbs_Demo_Sidebarpage');
-		$noSidebarTemplate = $this->getPageTemplate('Rbs_Demo_Nosidebarpage');
+		$sidebarTemplate = $this->getPageTemplate('Rbs_Blank_SidebarPage');
+		$noSidebarTemplate = $this->getPageTemplate('Rbs_Blank_NoSidebarPage');
 		$transactionManager->commit();
 
-		//initialize website
+		// Initialize website.
 		$params = array_merge($this->getDefaultEventArguments(), [
-			'websiteId' => $website->getId(), 'sidebarTemplateId' => $sidebarTemplate->getId(),
+			'websiteId' => $website->getId(),
+			'sidebarTemplateId' => $sidebarTemplate->getId(),
 			'noSidebarTemplateId' => $noSidebarTemplate->getId(), 'LCID' => 'fr_FR'
 		]);
 		$event = new \Change\Commands\Events\Event('InitializeWebsiteEvent', $this->getApplication(), $params);
@@ -28,7 +29,8 @@ class Initialize extends AbstractSample
 		$initializeWebsite->execute($event);
 
 		$context = 'Rbs Generic Website Initialize ' . $website->getId();
-		$userAccountTopics = $this->getApplicationServices()->getDocumentCodeManager()->getDocumentsByCode('rbs_generic_initialize_user_account_topic', $context);
+		$userAccountTopics = $this->getApplicationServices()->getDocumentCodeManager()
+			->getDocumentsByCode('rbs_generic_initialize_user_account_topic', $context);
 		if (isset($userAccountTopics[0]) && $userAccountTopics[0] instanceof \Rbs\Website\Documents\Section)
 		{
 			/* @var $userAccountTopic \Rbs\Website\Documents\Section */
@@ -45,7 +47,6 @@ class Initialize extends AbstractSample
 					$transactionManager->commit();
 				}
 			}
-
 		}
 	}
 
@@ -54,7 +55,7 @@ class Initialize extends AbstractSample
 	 */
 	protected function getDefaultEventArguments()
 	{
-		$arguments = array('application' => $this->getApplication());
+		$arguments = ['application' => $this->getApplication()];
 		$services = new \Zend\Stdlib\Parameters();
 		$services->set('applicationServices', $this->getApplicationServices());
 		$services->set('genericServices', $this->genericServices);

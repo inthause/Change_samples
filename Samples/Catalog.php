@@ -83,8 +83,8 @@ class Catalog extends AbstractSample
 
 		$website = $this->getDefaultWebsite();
 
-		$sidebarTemplate = $this->getPageTemplate('Rbs_Demo_Sidebarpage');
-		$noSidebarTemplate = $this->getPageTemplate('Rbs_Demo_Nosidebarpage');
+		$sidebarTemplate = $this->getPageTemplate('Rbs_Blank_SidebarPage');
+		$noSidebarTemplate = $this->getPageTemplate('Rbs_Blank_NoSidebarPage');
 
 		//initialize website
 		$params = array_merge($this->getDefaultEventArguments(), [

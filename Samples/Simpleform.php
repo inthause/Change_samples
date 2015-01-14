@@ -14,8 +14,6 @@ class Simpleform extends AbstractSample
 
 		$website = $this->getDefaultWebsite();
 
-		$this->importPageJSON(__DIR__ . '/Assets/simpleform-pages.json', $website);
-
 		$this->log('Install forms...');
 		$allEvents = array();
 		$allData = json_decode(file_get_contents(__DIR__ .'/Assets/simpleform-forms.json'), true);
