@@ -15,10 +15,6 @@ class RbsStorelocatorSample
 		$LCID = 'fr_FR';
 		$applicationServices->getI18nManager()->setLCID($LCID);
 
-		/** @var \Rbs\Storelocator\StorelocatorServices $storelocatorServices */
-		$storelocatorServices = $event->getServices('Rbs_StorelocatorServices');
-
-
 
 		/** @var \Rbs\Generic\GenericServices $genericServices */
 		$genericServices = $event->getServices('genericServices');
@@ -50,7 +46,8 @@ class RbsStorelocatorSample
 		$storeLocatorIndex  = $this->addStoreLocatorIndex($website, $LCID);
 
 		$indexManager = $genericServices->getIndexManager();
-		try {
+		try
+		{
 			$indexManager->deleteIndex($storeLocatorIndex);
 		}
 		catch (\Elastica\Exception\ResponseException $e)
@@ -74,6 +71,9 @@ class RbsStorelocatorSample
 				$store = $documentManager->getNewDocumentInstanceByModelName('Rbs_Storelocator_Store');
 				$store->setCode($code);
 				$store->setRefLCID($LCID);
+				$store->setAllowPayment(true);
+				$store->setAllowRelayMode(true);
+				$store->setAllowPickUp(true);
 			}
 			$store->useCorrection(false);
 
@@ -81,7 +81,8 @@ class RbsStorelocatorSample
 			$label = isset($storeRawData['card']['name']) ? $storeRawData['card']['name'] : $code;
 			$store->setLabel($label);
 			$storeLocalisation->setTitle($label);
-			if ($website) {
+			if ($website)
+			{
 				$store->getPublicationSections()->add($website);
 			}
 
@@ -138,7 +139,8 @@ class RbsStorelocatorSample
 		$query->andPredicates($query->eq('website', $website), $query->eq('analysisLCID', $LCID));
 
 		$storeLocatorIndex = $query->getFirstDocument();
-		if (!$storeLocatorIndex) {
+		if (!$storeLocatorIndex)
+		{
 
 			/** @var \Rbs\Storelocator\Documents\StoreLocatorIndex $storeLocatorIndex */
 			$storeLocatorIndex = $documentManager->getNewDocumentInstanceByModelName('Rbs_Storelocator_StoreLocatorIndex');
