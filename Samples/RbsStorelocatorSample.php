@@ -32,7 +32,7 @@ class RbsStorelocatorSample
 		$website = $query->getFirstDocument();
 		echo 'Published in ', $website, PHP_EOL;
 
-		$addressFields = $applicationServices->getDocumentCodeManager()->getDocumentsByCode('AddressFields', 'Rbs_Storelocator_Setup');
+		$addressFields = $applicationServices->getDocumentCodeManager()->getDocumentsByCode('Storelocator_AddressFields', 'Rbs_Setup');
 		$addressFields = count($addressFields) ? $addressFields[0] : null;
 
 		echo 'Address format ', $addressFields, PHP_EOL;

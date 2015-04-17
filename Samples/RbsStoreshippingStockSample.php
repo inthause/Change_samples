@@ -12,7 +12,10 @@ class RbsStoreshippingStockSample
 		$documentManager = $applicationServices->getDocumentManager();
 
 		$dbProvider = $applicationServices->getDbProvider();
+		
 		$tm = $applicationServices->getTransactionManager();
+
+		$dbProvider->getSchemaManager()->execute('TRUNCATE TABLE rbs_storeshipping_dat_store_stock');
 
 		$storeIds = $documentManager->getNewQuery('Rbs_Storelocator_Store')->getDocumentIds();
 		echo 'storeIds: ', count($storeIds), PHP_EOL;
